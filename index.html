@@ -8,238 +8,61 @@
 </head>
 <body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 relative min-h-screen">
 
+    <div class="fixed bottom-4 right-4 z-40">
+        <a href="admin.html" class="bg-slate-800/80 backdrop-blur border border-slate-700 hover:bg-slate-700 text-slate-300 text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg transition flex items-center gap-2">
+            ⚙️ Mode Admin (CMS)
+        </a>
+    </div>
+
     <header class="max-w-4xl mx-auto text-center px-4 py-20 md:py-32 relative overflow-hidden">
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl -z-10"></div>
         
-        <div class="inline-flex items-center space-x-2 bg-slate-900/60 border border-slate-800 px-5 py-2.5 rounded-2xl shadow-lg shadow-cyan-500/5 cursor-default group mb-6">
-            <span class="text-2xl group-hover:rotate-12 transition-transform duration-300">⚡</span>
-            <span class="font-black text-xl tracking-tight bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 bg-clip-text text-transparent">ChargerCukup<span class="text-cyan-400">.com</span></span>
+        <div class="inline-flex items-center space-x-2 bg-slate-900/60 border border-slate-800 px-5 py-2.5 rounded-2xl shadow-lg shadow-cyan-500/5 mb-6">
+            <span class="text-2xl">⚡</span>
+            <span id="cms-brand-name" class="font-black text-xl tracking-tight bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 bg-clip-text text-transparent">ChargerCukup.com</span>
         </div>
 
-        <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-white">
+        <h1 id="cms-hero-title" class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-white">
             Beli Kepala Charger Baru Tanpa Takut <span class="bg-gradient-to-r from-cyan-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">Salah Watt</span> atau Merusak Baterai
         </h1>
-        <p class="text-base md:text-lg text-slate-400 mt-6 max-w-2xl mx-auto leading-relaxed">
+        <p id="cms-hero-desc" class="text-base md:text-lg text-slate-400 mt-6 max-w-2xl mx-auto leading-relaxed">
             Bingung HP atau Laptop barumu dijual tanpa adaptor di dalam kotaknya? Jangan asal beli adaptor murah. Cek kecocokan daya perangkatmu secara aman, instan, dan 100% akurat.
         </p>
         
         <div class="mt-10">
-            <button onclick="openKalkulator()" class="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black px-8 py-4 rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all duration-200 transform hover:-translate-y-1 inline-block cursor-pointer">
+            <button onclick="openKalkulator()" id="cms-cta-btn-1" class="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black px-8 py-4 rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all duration-200 transform hover:-translate-y-1 inline-block cursor-pointer">
                 ⚡ Buka Kalkulator Charger (Gratis)
             </button>
         </div>
-        <p class="text-xs text-slate-500 mt-6 flex items-center justify-center space-x-2">
-            <span class="text-amber-400">★★★★★</span>
-            <span>Dipercaya oleh 12.000+ pengguna gadget awam di Indonesia.</span>
-        </p>
     </header>
-
-    <section class="border-y border-slate-900 bg-slate-950/40 py-8">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <p class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-4">Telah Direkomendasikan Oleh Komunitas Teknologi</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-slate-600 font-black tracking-widest text-sm opacity-50">
-                <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">JAGATREVIEW</span>
-                <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">KOMPASTEKNO</span>
-                <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">TECHINASIA</span>
-                <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">IDNTIMES</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto px-4 py-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-900/30 border border-slate-900 rounded-2xl p-6 text-center">
-            <div>
-                <p class="text-2xl md:text-3xl font-black text-cyan-400">99.8%</p>
-                <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Tingkat Akurasi</p>
-            </div>
-            <div>
-                <p class="text-2xl md:text-3xl font-black text-amber-400">45.000+</p>
-                <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Gadget Selamat</p>
-            </div>
-            <div>
-                <p class="text-2xl md:text-3xl font-black text-teal-400">&lt; 1 Detik</p>
-                <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Waktu Deteksi</p>
-            </div>
-            <div>
-                <p class="text-2xl md:text-3xl font-black text-rose-400">0 Kebocoran</p>
-                <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Klaim Eror</p>
-            </div>
-        </div>
-    </section>
 
     <section class="bg-slate-950 py-20 border-t border-slate-900">
         <div class="max-w-5xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-black text-center text-white tracking-tight">Mengapa Anda Tidak Boleh Asal Colok Charger?</h2>
+            <h2 id="cms-pain-title" class="text-3xl md:text-4xl font-black text-center text-white tracking-tight">Mengapa Anda Tidak Boleh Asal Colok Charger?</h2>
             <div class="grid md:grid-cols-3 gap-8 mt-12">
-                <div class="bg-slate-900/30 p-6 rounded-2xl border border-slate-900 hover:border-amber-500/30 transition-all duration-300 group">
-                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">⏳</div>
-                    <h3 class="font-bold text-xl text-white mt-4">Pengisian Super Lemot</h3>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Membeli Watt yang terlalu kecil membuat baterai tidak akan pernah terisi penuh walaupun dicolok seharian.</p>
+                <div class="bg-slate-900/30 p-6 rounded-2xl border border-slate-900">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-2xl">⏳</div>
+                    <h3 id="cms-pain1-title" class="font-bold text-xl text-white mt-4">Pengisian Super Lemot</h3>
+                    <p id="cms-pain1-desc" class="text-slate-400 text-sm mt-3 leading-relaxed">Membeli Watt yang terlalu kecil membuat baterai tidak akan pernah terisi penuh walaupun dicolok seharian.</p>
                 </div>
-                <div class="bg-slate-900/30 p-6 rounded-2xl border border-slate-900 hover:border-rose-500/30 transition-all duration-300 group">
-                    <div class="w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">🔥</div>
-                    <h3 class="font-bold text-xl text-white mt-4">Baterai Cepat Bocor</h3>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Memicu panas berlebih (overheat) yang mempercepat penurunan kesehatan baterai (Battery Health) gadget mahal Anda.</p>
+                <div class="bg-slate-900/30 p-6 rounded-2xl border border-slate-900">
+                    <div class="w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center text-2xl">🔥</div>
+                    <h3 id="cms-pain2-title" class="font-bold text-xl text-white mt-4">Baterai Cepat Bocor</h3>
+                    <p id="cms-pain2-desc" class="text-slate-400 text-sm mt-3 leading-relaxed">Memicu panas berlebih (overheat) yang mempercepat penurunan kesehatan baterai (Battery Health) gadget mahal Anda.</p>
                 </div>
-                <div class="bg-slate-900/30 p-6 rounded-2xl border border-slate-900 hover:border-cyan-500/30 transition-all duration-300 group">
-                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">💸</div>
-                    <h3 class="font-bold text-xl text-white mt-4">Rugi Bandar</h3>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Membeli adaptor 100W berharga mahal akan sia-sia jika batas tampung sirkuit bawaan HP Anda ternyata mentok di 25W saja.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="fitur" class="py-20 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border-y border-slate-900 text-center px-4">
-        <div class="max-w-3xl mx-auto">
-            <span class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm shadow-cyan-500/5 mb-4 inline-block">Fitur Unggulan</span>
-            <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white mt-2">Smart Checker Berbasis Logika Parameter Industri</h2>
-            <p class="text-slate-400 mt-4 text-sm md:text-base leading-relaxed">
-                ChargerCukup.com menerjemahkan angka kelistrikan rumit menjadi rekomendasi finansial dan keamanan yang sangat mudah dipahami orang awam tanpa perlu mengerti ilmu teknik elektro.
-            </p>
-        </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto px-4 py-20">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-slate-900/20 p-6 rounded-2xl border border-slate-900 text-center">
-                <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mx-auto text-slate-950 font-black mb-4 shadow-md shadow-cyan-500/10">1</div>
-                <h3 class="font-bold text-lg text-white">Smart Matcher Matrix</h3>
-                <p class="text-slate-400 text-sm mt-2 leading-relaxed">Algoritma otomatis mencocokkan batas toleransi daya input perangkat dengan output adaptor aman.</p>
-            </div>
-            <div class="bg-slate-900/20 p-6 rounded-2xl border border-slate-900 text-center">
-                <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mx-auto text-slate-950 font-black mb-4 shadow-md shadow-cyan-500/10">2</div>
-                <h3 class="font-bold text-lg text-white">Battery Safeguard</h3>
-                <p class="text-slate-400 text-sm mt-2 leading-relaxed">Peringatan dini sistem jika adaptor yang dipilih berpotensi merusak sirkuit IC Power internal.</p>
-            </div>
-            <div class="bg-slate-900/20 p-6 rounded-2xl border border-slate-900 text-center">
-                <div class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center mx-auto text-slate-950 font-black mb-4 shadow-md shadow-cyan-500/10">3</div>
-                <h3 class="font-bold text-lg text-white">Eco-Billing Optimizer</h3>
-                <p class="text-slate-400 text-sm mt-2 leading-relaxed">Menghitung efisiensi daya agar pengisian maksimal tanpa membuang sisa arus listrik di rumah.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-slate-900/40 py-16 border-y border-slate-900">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-black text-white">Hanya 3 Langkah Mudah Menuju Colokan Aman</h2>
-            <div class="grid md:grid-cols-3 gap-4 mt-8 text-sm font-bold text-slate-400">
-                <div class="p-4 bg-slate-950 rounded-xl border border-slate-900 hover:border-cyan-500/20 transition">1. Pilih Tipe Perangkat</div>
-                <div class="p-4 bg-slate-950 rounded-xl border border-slate-900 hover:border-cyan-500/20 transition">2. Masukkan Angka Watt</div>
-                <div class="p-4 bg-slate-950 rounded-xl border border-slate-900 hover:border-cyan-500/20 transition">3. Dapatkan Hasil Instan</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about-us" class="max-w-5xl mx-auto px-4 py-20 border-b border-slate-900 relative">
-        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full blur-[120px] opacity-15 -z-10"></div>
-        <div class="absolute top-1/3 right-1/4 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full blur-[120px] opacity-10 -z-10"></div>
-
-        <div class="text-center mb-16">
-            <span class="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/40 text-cyan-400 text-xs font-black px-5 py-2 rounded-full uppercase tracking-widest shadow-lg shadow-cyan-500/10">Tentang Aplikasi</span>
-            <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mt-6">Mengenal <span class="bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 bg-clip-text text-transparent">ChargerCukup.com</span></h2>
-            <p class="text-sm text-slate-400 mt-3 max-w-xl mx-auto">Satu alat sederhana untuk menyelamatkan kesehatan baterai seluruh gawai berharga Anda.</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8 items-stretch">
-            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-xl flex flex-col justify-between">
-                <div>
-                    <h3 class="text-amber-400 font-black text-xl flex items-center gap-2.5">
-                        <span class="bg-amber-500/10 p-2 rounded-xl text-2xl">🚀</span> Our Origin Story
-                    </h3>
-                    <p class="text-slate-300 text-sm mt-6 leading-relaxed">
-                        Lahir dari fenomena industri teknologi global terkini, di mana produsen *smartphone* dan laptop mulai menghilangkan adaptor *charger* dari kotak penjualan dengan dalih menekan emisi karbon.
-                    </p>
-                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
-                        Kami melihat kebijakan ini justru menciptakan masalah baru bagi konsumen awam. Absennya standar edukasi yang jelas membuat banyak orang keliru membeli adaptor murah berkualitas rendah atau *watt* yang tidak sesuai, berujung pada kerusakan sirkuit daya dan pemborosan finansial. Platform ini dikembangkan secara mandiri sebagai solusi instan dan independen untuk menjembatani masalah tersebut.
-                    </p>
-                </div>
-                <div class="mt-8 pt-4 border-t border-slate-900 text-xs text-slate-500 font-mono">
-                    Project Status: Production-Ready SaaS
-                </div>
-            </div>
-
-            <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/30 p-8 rounded-3xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 shadow-xl flex flex-col justify-center relative overflow-hidden group">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/10 transition-all"></div>
-                <h3 class="text-cyan-400 font-black text-xl flex items-center gap-2.5">
-                    <span class="bg-cyan-500/10 p-2 rounded-xl text-2xl">🎯</span> Visi Besar Kami
-                </h3>
-                <p class="text-slate-300 text-base mt-6 leading-relaxed">
-                    Menjadi platform <span class="text-cyan-400 font-semibold underline decoration-cyan-500/40">micro-SaaS rujukan utama</span> di Indonesia untuk edukasi kesehatan sirkuit daya gawai, serta aktif berkontribusi menekan angka penumpukan sampah elektronik (*e-waste*) akibat salah membeli aksesoris.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto px-4 py-8">
-        <div class="bg-gradient-to-r from-rose-950 via-slate-900 to-slate-900 border border-rose-500/20 rounded-2xl p-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div class="flex items-center space-x-4">
-                <span class="text-3xl">⚠️</span>
-                <div>
-                    <h4 class="font-black text-white text-lg">Jangan Tunggu Sampai Battery Health HP-mu Drop 50%!</h4>
-                    <p class="text-slate-400 text-xs mt-0.5">Sekali sirkuit IC power bocor karena salah adaptor, biaya perbaikannya setara harga HP baru.</p>
-                </div>
-            </div>
-            <button onclick="openKalkulator()" class="bg-rose-500 hover:bg-rose-600 text-white font-bold text-xs px-5 py-3 rounded-xl transition shrink-0 cursor-pointer">Proteksi Baterai Sekarang</button>
-        </div>
-    </section>
-
-    <section id="testimoni" class="max-w-5xl mx-auto px-4 py-16">
-        <h2 class="text-2xl md:text-3xl font-black text-center text-white mb-12">Apa Kata Mereka yang Berhasil Menyelamatkan Gadgetnya?</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-                <p class="text-slate-300 italic text-sm leading-relaxed">"Baru tahu kalau iPhone 15 saya gak butuh charger 65W yang mahal. Cukup beli yang 20W berkat web ini. Hemat ratusan ribu!"</p>
-                <p class="text-cyan-400 font-bold text-xs mt-4">— Rian, Tech Enthusiast.</p>
-            </div>
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl">
-                <p class="text-slate-300 italic text-sm leading-relaxed">"Sangat membantu saya yang gaptek pas mau beliin kepala charger anak buat sekolah. Cuma klik-klik, langsung paham tanpa pusing."</p>
-                <p class="text-cyan-400 font-bold text-xs mt-4">— Dewi, Ibu Rumah Tangga.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-3xl mx-auto px-4 py-20">
-        <h2 class="text-2xl md:text-3xl font-black text-center text-white mb-10">Pertanyaan yang Sering Diajukan</h2>
-        <div class="space-y-4">
-            <div class="border border-slate-800 bg-slate-900/20 rounded-2xl overflow-hidden">
-                <button onclick="toggleFaq(1)" class="w-full text-left p-5 font-bold text-white flex justify-between items-center focus:outline-none cursor-pointer hover:bg-slate-900/50 transition">
-                    <span>Q: Apakah aplikasi ini menggunakan AI?</span>
-                    <span id="faq-icon-1" class="text-cyan-400 font-bold text-lg transition-transform duration-200">+</span>
-                </button>
-                <div id="faq-ans-1" class="hidden p-5 pt-0 text-sm text-slate-400 border-t border-slate-900/50 leading-relaxed">
-                    A: Tidak. Aplikasi ini murni menggunakan database parameter daya industri (Voltase & Ampere) untuk memberikan hasil matematis yang pasti dan stabil tanpa halusinasi data.
-                </div>
-            </div>
-            <div class="border border-slate-800 bg-slate-900/20 rounded-2xl overflow-hidden">
-                <button onclick="toggleFaq(2)" class="w-full text-left p-5 font-bold text-white flex justify-between items-center focus:outline-none cursor-pointer hover:bg-slate-900/50 transition">
-                    <span>Q: Apakah aman mengikuti rekomendasi dari sini?</span>
-                    <span id="faq-icon-2" class="text-cyan-400 font-bold text-lg transition-transform duration-200">+</span>
-                </button>
-                <div id="faq-ans-2" class="hidden p-5 pt-0 text-sm text-slate-400 border-t border-slate-900/50 leading-relaxed">
-                    A: Sangat aman. Seluruh rentang batas daya kelayakan yang kami gunakan disadur langsung dari buku manual panduan informasi resmi masing-masing pabrikan brand perangkat.
+                <div class="bg-slate-900/30 p-6 rounded-2xl border border-slate-900">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-xl flex items-center justify-center text-2xl">💸</div>
+                    <h3 id="cms-pain3-title" class="font-bold text-xl text-white mt-4">Rugi Bandar</h3>
+                    <p id="cms-pain3-desc" class="text-slate-400 text-sm mt-3 leading-relaxed">Membeli adaptor 100W berharga mahal akan sia-sia jika batas tampung sirkuit bawaan HP Anda ternyata mentok di 25W saja.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="bg-slate-950 text-slate-600 text-center py-16 border-t border-slate-900 px-4 relative">
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl -z-10"></div>
-        <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight">Jangan Pertaruhkan Kesehatan Baterai Gadget Mahal Anda.</h2>
-        <div class="mt-8">
-            <button onclick="openKalkulator()" class="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black text-xs px-6 py-3.5 rounded-xl transition-all duration-200 inline-block shadow-lg shadow-cyan-500/10 cursor-pointer">Mulai Cek Secara Gratis Sekarang</button>
-        </div>
-        <hr class="max-w-4xl mx-auto border-slate-900 my-10">
-        <p class="text-xs tracking-wide">&copy; 2026 ChargerCukup.com. Seluruh hak cipta dilindungi.</p>
-    </footer>
-
 
     <div id="kalkulator-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl shadow-cyan-500/20 max-w-2xl w-full p-6 md:p-10 relative transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto">
-            
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 md:p-10 relative transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto">
             <button onclick="closeKalkulator()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-950 border border-slate-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition cursor-pointer">&times;</button>
             
-            <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-black text-white">📱 Kalkulator Deteksi Charger Pintar</h2>
                 <p class="text-xs text-slate-400 mt-2">Simulasikan kecocokan adaptor komersial sebelum Anda bayar di kasir toko</p>
@@ -249,34 +72,34 @@
                 <div>
                     <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 1: Pilih Jenis Perangkat Anda</label>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="setPerangkat('iphone')" id="btn-iphone" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                        <button onclick="setPerangkat('iphone')" id="btn-iphone" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
                             <span class="text-xl">🍏</span> <span>iPhone</span>
                         </button>
-                        <button onclick="setPerangkat('android')" id="btn-android" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                        <button onclick="setPerangkat('android')" id="btn-android" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
                             <span class="text-xl">🤖</span> <span>HP Android</span>
                         </button>
-                        <button onclick="setPerangkat('laptop_kerja')" id="btn-laptop_kerja" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                        <button onclick="setPerangkat('laptop_kerja')" id="btn-laptop_kerja" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
                             <span class="text-xl">💼</span> <span>Laptop Kerja</span>
                         </button>
-                        <button onclick="setPerangkat('laptop_gaming')" id="btn-laptop_gaming" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                        <button onclick="setPerangkat('laptop_gaming')" id="btn-laptop_gaming" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
                             <span class="text-xl">🎮</span> <span>Laptop Gaming</span>
                         </button>
                     </div>
                 </div>
 
                 <div>
-                    <label for="watt-select" class="block text-sm font-bold text-slate-300 mb-3">Langkah 2: Berapa Watt Adaptor yang Ingin Dibeli?</label>
-                    <select id="watt-select" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-2xl p-4 text-sm focus:outline-none focus:border-cyan-400 transition-all duration-200 cursor-pointer">
-                        <option value="" class="text-slate-500">-- Pilih Output Watt Charger --</option>
-                        <option value="5">5 Watt (Adaptor Kotak Kecil Jadul)</option>
-                        <option value="20">20 Watt (Standar Fast Charging Ringan)</option>
-                        <option value="33">33 Watt (Fast Charging Menengah)</option>
-                        <option value="65">65 Watt (Standar Laptop / Super Charger HP)</option>
-                        <option value="100">100 Watt (Daya Besar / Multi-Port Premium)</option>
+                    <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 2: Berapa Watt Adaptor yang Ingin Dibeli?</label>
+                    <select id="watt-select" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-2xl p-4 text-sm focus:outline-none focus:border-cyan-400 cursor-pointer">
+                        <option value="">-- Pilih Output Watt Charger --</option>
+                        <option value="5">5 Watt</option>
+                        <option value="20">20 Watt</option>
+                        <option value="33">33 Watt</option>
+                        <option value="65">65 Watt</option>
+                        <option value="100">100 Watt</option>
                     </select>
                 </div>
 
-                <button onclick="hitungKecocokan()" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-cyan-500/20 transform hover:-translate-y-0.5 cursor-pointer text-base">
+                <button onclick="hitungKecocokan()" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black py-4 rounded-2xl transition cursor-pointer text-base">
                     Hitung Kecocokan Daya ⚡
                 </button>
             </div>
@@ -293,52 +116,58 @@
         </div>
     </div>
 
-
     <script>
         let perangkatTerpilih = '';
 
-        // Logika Kontrol Modal (Open/Close)
+        // --- SISTEM MEMBACA DATA DARI CMS ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedData = localStorage.getItem('chargerCukup_cms_data');
+            if (savedData) {
+                const data = JSON.parse(savedData);
+                if(data.brandName) document.getElementById('cms-brand-name').innerText = data.brandName;
+                if(data.heroTitle) document.getElementById('cms-hero-title').innerHTML = data.heroTitle;
+                if(data.heroDesc) document.getElementById('cms-hero-desc').innerText = data.heroDesc;
+                if(data.ctaBtn1) document.getElementById('cms-cta-btn-1').innerText = data.ctaBtn1;
+                if(data.painTitle) document.getElementById('cms-pain-title').innerText = data.painTitle;
+                if(data.pain1Title) document.getElementById('cms-pain1-title').innerText = data.pain1Title;
+                if(data.pain1Desc) document.getElementById('cms-pain1-desc').innerText = data.pain1Desc;
+                if(data.pain2Title) document.getElementById('cms-pain2-title').innerText = data.pain2Title;
+                if(data.pain2Desc) document.getElementById('cms-pain2-desc').innerText = data.pain2Desc;
+                if(data.pain3Title) document.getElementById('cms-pain3-title').innerText = data.pain3Title;
+                if(data.pain3Desc) document.getElementById('cms-pain3-desc').innerText = data.pain3Desc;
+            }
+        });
+
+        // Logika Kontrol Modal
         function openKalkulator() {
             const modal = document.getElementById('kalkulator-modal');
             const modalContent = modal.querySelector('div');
-            
             modal.classList.remove('opacity-0', 'pointer-events-none');
             modal.classList.add('opacity-100');
             modalContent.classList.remove('scale-95');
             modalContent.classList.add('scale-100');
-            document.body.style.overflow = 'hidden'; // Kunci scroll halaman belakang
+            document.body.style.overflow = 'hidden';
         }
 
         function closeKalkulator() {
             const modal = document.getElementById('kalkulator-modal');
             const modalContent = modal.querySelector('div');
-            
             modal.classList.remove('opacity-100');
             modal.classList.add('opacity-0', 'pointer-events-none');
             modalContent.classList.remove('scale-100');
             modalContent.classList.add('scale-95');
-            document.body.style.overflow = ''; // Aktifkan kembali scroll
-            
-            // Reset form jika ditutup (opsional)
-            perangkatTerpilih = '';
-            document.querySelectorAll('.device-btn').forEach(btn => {
-                btn.className = "device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2";
-            });
-            document.getElementById('watt-select').value = '';
-            document.getElementById('hasil-box').classList.add('hidden');
+            document.body.style.overflow = '';
         }
 
-        // Logika Pemilihan Tombol Perangkat
         function setPerangkat(device) {
             perangkatTerpilih = device;
             document.querySelectorAll('.device-btn').forEach(btn => {
-                btn.className = "device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2";
+                btn.className = "device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2";
             });
             const activeBtn = document.getElementById('btn-' + device);
-            activeBtn.className = "device-btn border border-cyan-500 bg-cyan-500/5 text-white scale-[1.02] shadow-lg shadow-cyan-500/10 rounded-2xl p-4 text-center font-bold text-sm transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2";
+            activeBtn.className = "device-btn border border-cyan-500 bg-cyan-500/5 text-white scale-[1.02] rounded-2xl p-4 text-center font-bold text-sm transition cursor-pointer flex flex-col items-center space-y-2";
         }
 
-        // Logika Kalkulator Aturan Keputusan
         function hitungKecocokan() {
             const wattSelect = document.getElementById('watt-select').value;
             const hasilBox = document.getElementById('hasil-box');
@@ -350,32 +179,20 @@
             }
 
             const watt = parseInt(wattSelect);
-            
-            // Reset kelas animasi hasil
             hasilBox.className = "mt-8 border p-6 rounded-2xl transition-all duration-500 transform scale-95 opacity-0";
-            hasilIconBg.className = "p-3 rounded-xl text-3xl shrink-0";
-
+            
+            // Logika Keputusan Sederhana
             if (perangkatTerpilih === 'iphone' || perangkatTerpilih === 'android') {
                 if (watt >= 20 && watt <= 33) {
-                    tampilkanHasil('hijau', '🟢 COCOK & NGEBUT!', `Adaptor ${watt}W sangat pas untuk HP Anda. Fitur Fast Charging bawaan pabrik akan aktif maksimal secara aman tanpa membuat baterai kembung.`, '✅');
-                } else if (watt > 33) {
-                    tampilkanHasil('kuning', '🟡 BISA, TAPI DAYA BERLEBIH', `HP Anda aman karena memiliki sirkuit pembatas arus, namun daya ${watt}W terlalu mubazir. Kecepatan isi baterai akan tetap mentok di daya maksimal bawaan HP saja.`, '⚠️');
+                    tampilkanHasil('hijau', '🟢 COCOK!', `Adaptor ${watt}W pas untuk HP Anda.`, '✅');
                 } else {
-                    tampilkanHasil('red', '🔴 PENGISIAN LAMBAT (LEMOT)', `Daya ${watt}W terlalu kecil untuk HP modern. Butuh waktu sangat lama (3 jam+) untuk mengisi daya hingga penuh.`, '❌');
+                    tampilkanHasil('red', '❌ TIDAK IDEAL', `Kurang optimal untuk rentang daya HP Anda.`, '❌');
                 }
-            } else if (perangkatTerpilih === 'laptop_kerja') {
-                if (watt === 65) {
-                    tampilkanHasil('hijau', '🟢 SANGAT IDEAL!', 'Daya 65W adalah angka mutlak standar kelayakan Ultrabook modern. Pengisian daya stabil meskipun laptop dipakai bekerja berat.', '✅');
-                } else if (watt === 100) {
-                    tampilkanHasil('hijau', '🟢 AMAN & PREMIUM', 'Daya 100W sangat bagus. Laptop hanya akan menyerap daya sesuai kapasitas tampungnya, sisa alokasi daya menjaga adaptor tetap dingin.', '✅');
+            } else {
+                if (watt >= 65) {
+                    tampilkanHasil('hijau', '🟢 AMAN UNTUK LAPTOP', `Daya ${watt}W mencukupi kebutuhan laptop kerja.`, '✅');
                 } else {
-                    tampilkanHasil('red', '🔴 DAYA TIDAK CUKUP', `Adaptor ${watt}W terlalu lemah untuk mengangkat komponen Laptop kerja. Indikator baterai mungkin silang (X) atau tidak mengisi sama sekali.`, '❌');
-                }
-            } else if (perangkatTerpilih === 'laptop_gaming') {
-                if (watt === 100) {
-                    tampilkanHasil('kuning', '🟡 HANYA UNTUK CAS STANDBY', 'Daya 100W hanya aman mengisi saat laptop gaming dimatikan. Jika dipakai bermain game berat, baterai akan drop karena minimal game butuh 150W+.', '⚠️');
-                } else {
-                    tampilkanHasil('red', '🔴 KHUSUS LAPTOP GAMING: BERBAHAYA', `Daya ${watt}W mutlak tidak kuat. Laptop gaming membutuhkan brick adaptor bawaan pabrik demi mencegah kerusakan sirkuit daya saat GPU bekerja penuh.`, '❌');
+                    tampilkanHasil('red', '❌ DAYA LEMAH', `Laptop tidak akan terisi dengan baik.`, '❌');
                 }
             }
         }
@@ -388,36 +205,12 @@
             hasilIconBg.innerText = icon;
 
             if (warna === 'hijau') {
-                hasilBox.classList.add('bg-emerald-950/40', 'border-emerald-500/30', 'text-emerald-400', 'shadow-lg', 'shadow-emerald-500/5');
-                hasilIconBg.classList.add('bg-emerald-500/10');
-            } else if (warna === 'kuning') {
-                hasilBox.classList.add('bg-amber-950/40', 'border-amber-500/30', 'text-amber-400', 'shadow-lg', 'shadow-amber-500/5');
-                hasilIconBg.classList.add('bg-amber-500/10');
+                hasilBox.classList.add('bg-emerald-950/40', 'border-emerald-500/30', 'text-emerald-400');
             } else {
-                hasilBox.classList.add('bg-rose-950/40', 'border-rose-500/30', 'text-rose-400', 'shadow-lg', 'shadow-rose-500/5');
-                hasilIconBg.classList.add('bg-rose-500/10');
+                hasilBox.classList.add('bg-rose-950/40', 'border-rose-500/30', 'text-rose-400');
             }
             hasilBox.classList.remove('hidden');
-            setTimeout(() => { 
-                hasilBox.classList.remove('scale-95', 'opacity-0'); 
-                hasilBox.classList.add('scale-100', 'opacity-100'); 
-            }, 50);
-        }
-
-        // Logika FAQ Accordion
-        function toggleFaq(id) {
-            const ans = document.getElementById('faq-ans-' + id);
-            const icon = document.getElementById('faq-icon-' + id);
-            
-            if (ans.classList.contains('hidden')) {
-                ans.classList.remove('hidden');
-                icon.innerText = "−";
-                icon.classList.add('rotate-180');
-            } else {
-                ans.classList.add('hidden');
-                icon.innerText = "+";
-                icon.classList.remove('rotate-180');
-            }
+            setTimeout(() => { hasilBox.classList.remove('scale-95', 'opacity-0'); }, 50);
         }
     </script>
 </body>
