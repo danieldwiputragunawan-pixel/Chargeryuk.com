@@ -6,7 +6,7 @@
     <title>ChargerCukup.com - Kalkulator Daya Charger Pintar</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
+<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 relative min-h-screen">
 
     <header class="max-w-4xl mx-auto text-center px-4 py-20 md:py-32 relative overflow-hidden">
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl -z-10"></div>
@@ -22,10 +22,11 @@
         <p class="text-base md:text-lg text-slate-400 mt-6 max-w-2xl mx-auto leading-relaxed">
             Bingung HP atau Laptop barumu dijual tanpa adaptor di dalam kotaknya? Jangan asal beli adaptor murah. Cek kecocokan daya perangkatmu secara aman, instan, dan 100% akurat.
         </p>
+        
         <div class="mt-10">
-            <a href="#kalkulator" class="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black px-8 py-4 rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all duration-200 transform hover:-translate-y-1 inline-block">
-                ⚡ Cek Charger Sekarang (Gratis)
-            </a>
+            <button onclick="openKalkulator()" class="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black px-8 py-4 rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all duration-200 transform hover:-translate-y-1 inline-block cursor-pointer">
+                ⚡ Buka Kalkulator Charger (Gratis)
+            </button>
         </div>
         <p class="text-xs text-slate-500 mt-6 flex items-center justify-center space-x-2">
             <span class="text-amber-400">★★★★★</span>
@@ -62,62 +63,6 @@
             <div>
                 <p class="text-2xl md:text-3xl font-black text-rose-400">0 Kebocoran</p>
                 <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Klaim Eror</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="kalkulator" class="max-w-3xl mx-auto px-4 py-16">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl shadow-cyan-500/5 p-6 md:p-10 relative">
-            <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-black text-white">📱 Kalkulator Deteksi Charger Pintar</h2>
-                <p class="text-sm text-slate-400 mt-2">Simulasikan kecocokan adaptor komersial sebelum Anda bayar di kasir toko</p>
-            </div>
-
-            <div class="space-y-6">
-                <div>
-                    <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 1: Pilih Jenis Perangkat Anda</label>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <button onclick="setPerangkat('iphone')" id="btn-iphone" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">🍏</span> <span>iPhone</span>
-                        </button>
-                        <button onclick="setPerangkat('android')" id="btn-android" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">🤖</span> <span>HP Android</span>
-                        </button>
-                        <button onclick="setPerangkat('laptop_kerja')" id="btn-laptop_kerja" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">💼</span> <span>Laptop Kerja</span>
-                        </button>
-                        <button onclick="setPerangkat('laptop_gaming')" id="btn-laptop_gaming" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">🎮</span> <span>Laptop Gaming</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div>
-                    <label for="watt-select" class="block text-sm font-bold text-slate-300 mb-3">Langkah 2: Berapa Watt Adaptor yang Ingin Dibeli?</label>
-                    <select id="watt-select" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-2xl p-4 text-sm focus:outline-none focus:border-cyan-400 transition-all duration-200 cursor-pointer">
-                        <option value="" class="text-slate-500">-- Pilih Output Watt Charger --</option>
-                        <option value="5">5 Watt (Adaptor Kotak Kecil Jadul)</option>
-                        <option value="20">20 Watt (Standar Fast Charging Ringan)</option>
-                        <option value="33">33 Watt (Fast Charging Menengah)</option>
-                        <option value="65">65 Watt (Standar Laptop / Super Charger HP)</option>
-                        <option value="100">100 Watt (Daya Besar / Multi-Port Premium)</option>
-                    </select>
-                </div>
-
-                <button onclick="hitungKecocokan()" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-cyan-500/20 transform hover:-translate-y-0.5 cursor-pointer text-base">
-                    Hitung Kecocokan Daya ⚡
-                </button>
-            </div>
-
-            <div id="hasil-box" class="hidden mt-8 border p-6 rounded-2xl transition-all duration-500 transform scale-95 opacity-0">
-                <div class="flex items-start space-x-4">
-                    <div id="hasil-icon-bg" class="p-3 rounded-xl text-3xl shrink-0"></div>
-                    <div>
-                        <h4 id="hasil-status" class="font-black text-xl tracking-tight"></h4>
-                        <p id="hasil-deskripsi" class="text-sm text-slate-300 mt-2 leading-relaxed"></p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -210,7 +155,7 @@
                     </p>
                 </div>
                 <div class="mt-8 pt-4 border-t border-slate-900 text-xs text-slate-500 font-mono">
-                    ....
+                    Project Init: Tugas E-Commerce Kelompok 4
                 </div>
             </div>
 
@@ -235,7 +180,7 @@
                     <p class="text-slate-400 text-xs mt-0.5">Sekali sirkuit IC power bocor karena salah adaptor, biaya perbaikannya setara harga HP baru.</p>
                 </div>
             </div>
-            <a href="#kalkulator" class="bg-rose-500 hover:bg-rose-600 text-white font-bold text-xs px-5 py-3 rounded-xl transition shrink-0">Proteksi Baterai Sekarang</a>
+            <button onclick="openKalkulator()" class="bg-rose-500 hover:bg-rose-600 text-white font-bold text-xs px-5 py-3 rounded-xl transition shrink-0 cursor-pointer">Proteksi Baterai Sekarang</button>
         </div>
     </section>
 
@@ -262,7 +207,7 @@
                     <span id="faq-icon-1" class="text-cyan-400 font-bold text-lg transition-transform duration-200">+</span>
                 </button>
                 <div id="faq-ans-1" class="hidden p-5 pt-0 text-sm text-slate-400 border-t border-slate-900/50 leading-relaxed">
-                    A: Tidak. Aplikasi ini murni menggunakan database parameter daya industri (Voltase & Ampere) untuk memberikan hasil matematis yang pasti dan stabil tanpa halusinasi data.
+                    A: Tidak. Aplikasi ini murni menggunakan database parameter daya industri (Voltase & Ampere) untuk memberikan hasil matematis yang pasti dan stabil tanpa halusunasi data.
                 </div>
             </div>
             <div class="border border-slate-800 bg-slate-900/20 rounded-2xl overflow-hidden">
@@ -281,25 +226,116 @@
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl -z-10"></div>
         <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight">Jangan Pertaruhkan Kesehatan Baterai Gadget Mahal Anda.</h2>
         <div class="mt-8">
-            <a href="#kalkulator" class="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black text-xs px-6 py-3.5 rounded-xl transition-all duration-200 inline-block shadow-lg shadow-cyan-500/10">Mulai Cek Secara Gratis Sekarang</a>
+            <button onclick="openKalkulator()" class="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black text-xs px-6 py-3.5 rounded-xl transition-all duration-200 inline-block shadow-lg shadow-cyan-500/10 cursor-pointer">Mulai Cek Secara Gratis Sekarang</button>
         </div>
         <hr class="max-w-4xl mx-auto border-slate-900 my-10">
-        <p class="text-xs tracking-wide">&copy; 2026 ChargerCukup.com Seluruh hak cipta dilindungi.</p>
+        <p class="text-xs tracking-wide">&copy; 2026 ChargerCukup.com. Projek Tugas Besar Kuliah E-Commerce Bisnis Digital. Seluruh hak cipta dilindungi.</p>
     </footer>
+
+
+    <div id="kalkulator-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl shadow-2xl shadow-cyan-500/20 max-w-2xl w-full p-6 md:p-10 relative transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeKalkulator()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-950 border border-slate-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition cursor-pointer">&times;</button>
+            
+            <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-black text-white">📱 Kalkulator Deteksi Charger Pintar</h2>
+                <p class="text-xs text-slate-400 mt-2">Simulasikan kecocokan adaptor komersial sebelum Anda bayar di kasir toko</p>
+            </div>
+
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 1: Pilih Jenis Perangkat Anda</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="setPerangkat('iphone')" id="btn-iphone" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                            <span class="text-xl">🍏</span> <span>iPhone</span>
+                        </button>
+                        <button onclick="setPerangkat('android')" id="btn-android" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                            <span class="text-xl">🤖</span> <span>HP Android</span>
+                        </button>
+                        <button onclick="setPerangkat('laptop_kerja')" id="btn-laptop_kerja" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                            <span class="text-xl">💼</span> <span>Laptop Kerja</span>
+                        </button>
+                        <button onclick="setPerangkat('laptop_gaming')" id="btn-laptop_gaming" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2">
+                            <span class="text-xl">🎮</span> <span>Laptop Gaming</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="watt-select" class="block text-sm font-bold text-slate-300 mb-3">Langkah 2: Berapa Watt Adaptor yang Ingin Dibeli?</label>
+                    <select id="watt-select" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-2xl p-4 text-sm focus:outline-none focus:border-cyan-400 transition-all duration-200 cursor-pointer">
+                        <option value="" class="text-slate-500">-- Pilih Output Watt Charger --</option>
+                        <option value="5">5 Watt (Adaptor Kotak Kecil Jadul)</option>
+                        <option value="20">20 Watt (Standar Fast Charging Ringan)</option>
+                        <option value="33">33 Watt (Fast Charging Menengah)</option>
+                        <option value="65">65 Watt (Standar Laptop / Super Charger HP)</option>
+                        <option value="100">100 Watt (Daya Besar / Multi-Port Premium)</option>
+                    </select>
+                </div>
+
+                <button onclick="hitungKecocokan()" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black py-4 rounded-2xl transition-all duration-200 shadow-lg shadow-cyan-500/20 transform hover:-translate-y-0.5 cursor-pointer text-base">
+                    Hitung Kecocokan Daya ⚡
+                </button>
+            </div>
+
+            <div id="hasil-box" class="hidden mt-8 border p-6 rounded-2xl transition-all duration-500 transform scale-95 opacity-0">
+                <div class="flex items-start space-x-4">
+                    <div id="hasil-icon-bg" class="p-3 rounded-xl text-3xl shrink-0"></div>
+                    <div>
+                        <h4 id="hasil-status" class="font-black text-xl tracking-tight"></h4>
+                        <p id="hasil-deskripsi" class="text-sm text-slate-300 mt-2 leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         let perangkatTerpilih = '';
+
+        // Logika Kontrol Modal (Open/Close)
+        function openKalkulator() {
+            const modal = document.getElementById('kalkulator-modal');
+            const modalContent = modal.querySelector('div');
+            
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            document.body.style.overflow = 'hidden'; // Kunci scroll halaman belakang
+        }
+
+        function closeKalkulator() {
+            const modal = document.getElementById('kalkulator-modal');
+            const modalContent = modal.querySelector('div');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            document.body.style.overflow = ''; // Aktifkan kembali scroll
+            
+            // Reset form jika ditutup (opsional)
+            perangkatTerpilih = '';
+            document.querySelectorAll('.device-btn').forEach(btn => {
+                btn.className = "device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2";
+            });
+            document.getElementById('watt-select').value = '';
+            document.getElementById('hasil-box').classList.add('hidden');
+        }
 
         // Logika Pemilihan Tombol Perangkat
         function setPerangkat(device) {
             perangkatTerpilih = device;
             document.querySelectorAll('.device-btn').forEach(btn => {
-                btn.classList.remove('border-cyan-500', 'bg-cyan-500/5', 'text-white', 'scale-[1.02]', 'shadow-lg', 'shadow-cyan-500/10');
-                btn.classList.add('border-slate-800', 'bg-slate-950', 'text-slate-400');
+                btn.className = "device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2";
             });
             const activeBtn = document.getElementById('btn-' + device);
-            activeBtn.classList.remove('border-slate-800', 'bg-slate-950', 'text-slate-400');
-            activeBtn.classList.add('border-cyan-500', 'bg-cyan-500/5', 'text-white', 'scale-[1.02]', 'shadow-lg', 'shadow-cyan-500/10');
+            activeBtn.className = "device-btn border border-cyan-500 bg-cyan-500/5 text-white scale-[1.02] shadow-lg shadow-cyan-500/10 rounded-2xl p-4 text-center font-bold text-sm transition-all duration-200 cursor-pointer flex flex-col items-center space-y-2";
         }
 
         // Logika Kalkulator Aturan Keputusan
@@ -315,6 +351,7 @@
 
             const watt = parseInt(wattSelect);
             
+            // Reset kelas animasi hasil
             hasilBox.className = "mt-8 border p-6 rounded-2xl transition-all duration-500 transform scale-95 opacity-0";
             hasilIconBg.className = "p-3 rounded-xl text-3xl shrink-0";
 
