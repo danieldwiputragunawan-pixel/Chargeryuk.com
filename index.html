@@ -222,7 +222,25 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 items-stretch">
-            <!-- Sisi Kiri: Visi Besar Kami (Mengambil Alih Tempat Origin Story dengan Layout Seimbang) -->
+            <!-- Sisi Kiri: Our Origin Story (DIPERTAHANKAN) -->
+            <div class="bg-slate-900 p-8 rounded-3xl border border-slate-800 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h3 class="text-amber-400 font-black text-xl flex items-center gap-2.5">
+                        <span class="bg-amber-500/10 p-2 rounded-xl text-2xl">🚀</span> Our Origin Story
+                    </h3>
+                    <p class="text-slate-300 text-sm mt-6 leading-relaxed">
+                        Lahir dari kejengkelan kolektif kelompok kuliah kami ketika melihat tren produsen gawai global yang mulai menghilangkan kepala charger dari kotak penjualan dengan alasan 'lingkungan'.
+                    </p>
+                    <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                        Kami sadar, alih-alih menyelamatkan bumi, kebijakan ini justru membingungkan konsumen awam dan menjebak mereka membeli produk aksesoris tiruan yang merusak komponen internal sirkuit daya gawai.
+                    </p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-slate-900 text-xs text-slate-500 font-mono">
+                    Project Init: Tugas E-Commerce Kelompok 4
+                </div>
+            </div>
+
+            <!-- Sisi Kanan: Visi Besar Kami (Menggantikan Kartu Software Specification yang Dihapus) -->
             <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-cyan-950/30 p-8 rounded-3xl border border-slate-800 hover:border-cyan-500/40 transition-all duration-300 shadow-xl flex flex-col justify-center relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/10 transition-all"></div>
                 <h3 class="text-cyan-400 font-black text-xl flex items-center gap-2.5">
@@ -231,43 +249,6 @@
                 <p class="text-slate-300 text-base mt-6 leading-relaxed">
                     Menjadi platform <span class="text-cyan-400 font-semibold underline decoration-cyan-500/40">micro-SaaS rujukan utama</span> di Indonesia untuk edukasi kesehatan sirkuit daya gawai, serta aktif berkontribusi menekan angka penumpukan sampah elektronik (*e-waste*) akibat salah membeli aksesoris.
                 </p>
-            </div>
-
-            <!-- Sisi Kanan: DESKRIPSI SOFTWARE COMPONENT (Sesuai Gambar) -->
-            <div class="bg-gradient-to-b from-slate-900 via-slate-950 to-blue-950/40 p-8 rounded-3xl border border-slate-800 flex flex-col justify-between relative shadow-2xl shadow-cyan-500/5">
-                <div class="absolute -top-3 left-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 text-slate-950 font-black text-[10px] px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-cyan-500/20">
-                    Software Specifications
-                </div>
-                
-                <div>
-                    <div class="flex items-center space-x-3 mb-6 mt-2 bg-emerald-500/5 border border-emerald-500/20 w-fit px-3 py-1 rounded-full">
-                        <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-md shadow-emerald-400"></div>
-                        <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest font-black">System Status: Optimal</span>
-                    </div>
-
-                    <h4 id="software-title" class="text-xl font-black text-white tracking-tight border-b border-slate-800 pb-3">Kalkulator Kompatibilitas Lintas Parameter V1.0</h4>
-                    
-                    <p id="software-desc" class="text-slate-300 text-sm mt-4 leading-relaxed min-h-[120px]">
-                        Perangkat lunak ini dirancang menggunakan algoritma matriks pencocokan langsung (<span class="text-cyan-400 font-mono">Direct Matrix Matching</span>). Sistem akan membedah profil kelistrikan gawai berdasarkan batas toleransi IC Power bawaan produsen, lalu membandingkannya dengan output Watt, Voltase, dan Ampere dari adaptor pihak ketiga secara presisi.
-                    </p>
-                </div>
-
-                <div class="mt-6 pt-6 border-t border-slate-900/60">
-                    <div class="grid grid-cols-2 gap-4 text-left">
-                        <div class="p-3 bg-slate-950/80 border border-slate-850 rounded-xl shadow-inner">
-                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Engine Base</p>
-                            <p id="software-spec-1" class="text-xs font-black text-amber-400 font-mono mt-1">Vanilla JavaScript</p>
-                        </div>
-                        <div class="p-3 bg-slate-950/80 border border-slate-850 rounded-xl shadow-inner">
-                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Data Core</p>
-                            <p id="software-spec-2" class="text-xs font-black text-cyan-400 font-mono mt-1">Static Device Matrix</p>
-                        </div>
-                    </div>
-
-                    <button onclick="toggleSoftwareInfo()" class="w-full mt-4 text-center text-xs font-black text-slate-950 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-cyan-500/10 cursor-pointer active:scale-[0.98]">
-                        🔄 Intip Arsitektur Teknologi Kunci
-                    </button>
-                </div>
             </div>
         </div>
     </section>
@@ -388,13 +369,12 @@
     </footer>
 
     <!-- ========================================== -->
-    <!-- JAVASCRIPT LOGIC CENTER (LOGIKA UTUH)      -->
+    <!-- JAVASCRIPT LOGIC CENTER                    -->
     <!-- ========================================== -->
     <script>
         let perangkatTerpilih = '';
-        let softwareState = false;
 
-        // 1. Logika Pemilihan Tombol Perangkat (Kalkulator)
+        // Logika Pemilihan Tombol Perangkat
         function setPerangkat(device) {
             perangkatTerpilih = device;
             document.querySelectorAll('.device-btn').forEach(btn => {
@@ -406,7 +386,7 @@
             activeBtn.classList.add('border-cyan-500', 'bg-cyan-500/5', 'text-white', 'scale-[1.02]', 'shadow-lg', 'shadow-cyan-500/10');
         }
 
-        // 2. Logika Aturan Keputusan Output Hasil Kalkulator
+        // Logika Kalkulator Aturan Keputusan
         function hitungKecocokan() {
             const wattSelect = document.getElementById('watt-select').value;
             const hasilBox = document.getElementById('hasil-box');
@@ -419,7 +399,6 @@
 
             const watt = parseInt(wattSelect);
             
-            // Reset Class Animasi Box Hasil
             hasilBox.className = "mt-8 border p-6 rounded-2xl transition-all duration-500 transform scale-95 opacity-0";
             hasilIconBg.className = "p-3 rounded-xl text-3xl shrink-0";
 
@@ -448,7 +427,6 @@
             }
         }
 
-        // Helper Render Box Hasil Warna Kampus Neon
         function tampilkanHasil(warna, status, deskripsi, icon) {
             const hasilBox = document.getElementById('hasil-box');
             const hasilIconBg = document.getElementById('hasil-icon-bg');
@@ -473,34 +451,7 @@
             }, 50);
         }
 
-        // 3. Logika Interaktif Pengubah Konten Deskripsi & Spesifikasi Software (Section About Us)
-        function toggleSoftwareInfo() {
-            const title = document.getElementById('software-title');
-            const desc = document.getElementById('software-desc');
-            const spec1 = document.getElementById('software-spec-1');
-            const spec2 = document.getElementById('software-spec-2');
-            softwareState = !softwareState;
-
-            if (softwareState) {
-                title.innerHTML = "Teknologi <span class='text-teal-400'>'Smart Consumer Logic'</span>";
-                desc.innerHTML = "Aplikasi ini memotong rantai misinformasi spesifikasi dengan merangkum protokol pengisian daya rumit (seperti Power Delivery dan GaN Tech) ke dalam klaster keputusan sederhana berbasis warna universal: <span class='text-emerald-400 font-bold'>Hijau (Optimal)</span>, <span class='text-amber-400 font-bold'>Kuning (Mubazir)</span>, dan <span class='text-rose-400 font-bold'>Merah (Bahaya)</span>.";
-                
-                spec1.innerText = "Tailwind CSS v4";
-                spec1.className = "text-xs font-black text-teal-400 font-mono mt-1";
-                spec2.innerText = "Freemium Micro-SaaS";
-                spec2.className = "text-xs font-black text-rose-400 font-mono mt-1";
-            } else {
-                title.innerHTML = "Kalkulator Kompatibilitas Lintas Parameter V1.0";
-                desc.innerHTML = "Perangkat lunak ini dirancang menggunakan algoritma matriks pencocokan langsung (<span class='text-cyan-400 font-mono'>Direct Matrix Matching</span>). Sistem akan membedah profil kelistrikan gawai berdasarkan batas toleransi IC Power bawaan produsen, lalu membandingkannya dengan output Watt, Voltase, dan Ampere dari adaptor pihak ketiga secara presisi.";
-                
-                spec1.innerText = "Vanilla JavaScript";
-                spec1.className = "text-xs font-black text-amber-400 font-mono mt-1";
-                spec2.innerText = "Static Device Matrix";
-                spec2.className = "text-xs font-black text-cyan-400 font-mono mt-1";
-            }
-        }
-
-        // 4. Logika Interaktif Akordion FAQ Buka-Tutup
+        // Logika FAQ Accordion
         function toggleFaq(id) {
             const ans = document.getElementById('faq-ans-' + id);
             const icon = document.getElementById('faq-icon-' + id);
