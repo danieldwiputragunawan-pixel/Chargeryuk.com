@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChargerCukup.com - Kalkulator Daya Charger Pintar</title>
+    <!-- Tailwind CSS CDN v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 relative min-h-screen">
+<body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 relative min-h-screen overflow-hidden">
 
+    <!-- A. HALAMAN POLOS SPLASH SCREEN (INTRO LOADER) -->
+    <div id="splash-screen" class="fixed inset-0 bg-slate-950 z-100 flex flex-col items-center justify-center transition-all duration-1000 ease-in-out">
+        <div id="splash-text" class="opacity-0 scale-95 transition-all duration-1000 ease-out text-center">
+            <span class="text-4xl md:text-5xl block mb-2">⚡</span>
+            <h2 class="text-2xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 bg-clip-text text-transparent">
+                Welcome to ChargerCukup.com
+            </h2>
+            <div class="w-12 h-[2px] bg-cyan-500/50 mx-auto mt-4 rounded-full"></div>
+        </div>
+    </div>
+
+
+    <!-- B. CONTAINER UTAMA LANDING PAGE -->
+    <!-- Keadaan Awal: Buram, Transparan, Geser ke Bawah sedikit (translate-y-4) -->
     <div id="main-content" class="opacity-0 blur-md translate-y-4 transition-all duration-1000 ease-out">
 
+        <!-- 1. HERO SECTION -->
         <header class="max-w-4xl mx-auto text-center px-4 py-20 md:py-32 relative overflow-hidden">
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl -z-10"></div>
             
@@ -32,6 +48,42 @@
             </div>
         </header>
 
+        <!-- 2. TRUST LOGOS ANATOMY -->
+        <section class="border-y border-slate-900 bg-slate-950/40 py-8">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-4">Telah Direkomendasikan Oleh Komunitas Teknologi</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 text-slate-600 font-black tracking-widest text-sm opacity-50">
+                    <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">JAGATREVIEW</span>
+                    <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">KOMPASTEKNO</span>
+                    <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">TECHINASIA</span>
+                    <span class="hover:text-cyan-400 transition-all duration-300 cursor-default">IDNTIMES</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. STATISTIK DATA SAAS ANATOMY -->
+        <section class="max-w-5xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-900/30 border border-slate-900 rounded-2xl p-6 text-center">
+                <div>
+                    <p class="text-2xl md:text-3xl font-black text-cyan-400">99.8%</p>
+                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Tingkat Akurasi</p>
+                </div>
+                <div>
+                    <p class="text-2xl md:text-3xl font-black text-amber-400">45.000+</p>
+                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Gadget Selamat</p>
+                </div>
+                <div>
+                    <p class="text-2xl md:text-3xl font-black text-teal-400">&lt; 1 Detik</p>
+                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Waktu Deteksi</p>
+                </div>
+                <div>
+                    <p class="text-2xl md:text-3xl font-black text-rose-400">0 Kebocoran</p>
+                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Klaim Eror</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PAIN POINTS -->
         <section class="bg-slate-950 py-20 border-t border-slate-900">
             <div class="max-w-5xl mx-auto px-4">
                 <h2 id="cms-pain-title" class="text-3xl md:text-4xl font-black text-center text-white tracking-tight">Mengapa Anda Tidak Boleh Asal Colok Charger?</h2>
@@ -55,6 +107,7 @@
             </div>
         </section>
 
+        <!-- 5. VALUE PROPOSITION (FITUR UNGGULAN) -->
         <section class="py-20 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border-y border-slate-900 text-center px-4">
             <div class="max-w-3xl mx-auto">
                 <span class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm shadow-cyan-500/5 mb-4 inline-block">Fitur Unggulan</span>
@@ -65,6 +118,7 @@
             </div>
         </section>
 
+        <!-- 6. DETAILED FEATURE CARDS -->
         <section class="max-w-5xl mx-auto px-4 py-20">
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-slate-900/20 p-6 rounded-2xl border border-slate-900 text-center">
@@ -85,11 +139,16 @@
             </div>
         </section>
 
+        <!-- FINAL FOOTER -->
         <footer class="bg-slate-950 text-slate-600 text-center py-16 border-t border-slate-900 px-4">
             <p class="text-xs tracking-wide">&copy; 2026 ChargerCukup.com. Seluruh hak cipta dilindungi.</p>
         </footer>
 
-    </div> <div id="kalkulator-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+    </div> <!-- END OF MAIN CONTAINER -->
+
+
+    <!-- MODAL POPUP KALKULATOR -->
+    <div id="kalkulator-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 md:p-10 relative transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto">
             <button onclick="closeKalkulator()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-950 border border-slate-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition cursor-pointer">&times;</button>
             
@@ -146,12 +205,13 @@
         </div>
     </div>
 
+
+    <!-- TIMELINE SCRIPT UTAMA -->
     <script>
         let perangkatTerpilih = '';
 
-        // --- SISTEM MEMBACA DATA DARI CMS & TRIGGER ANIMASI ---
         window.addEventListener('DOMContentLoaded', () => {
-            // 1. Ambil data dari CMS (LocalStorage)
+            // 1. SISTEM SYNC DATA DARI CMS (LOCALSTORAGE)
             const savedData = localStorage.getItem('chargerCukup_cms_data');
             if (savedData) {
                 const data = JSON.parse(savedData);
@@ -176,15 +236,43 @@
                 if(data.f3Desc) document.getElementById('cms-f3-desc').innerText = data.f3Desc;
             }
 
-            // 2. PEMICU ANIMASI MASUK LANDING PAGE (Sesaat setelah data termuat)
+            // 2. TIMELINE ANIMASI INTRO SPLASH SCREEN
+            const splash = document.getElementById('splash-screen');
+            const splashText = document.getElementById('splash-text');
+            const mainContent = document.getElementById('main-content');
+
+            // Detik 0.2: Teks Welcome muncul memudar naik (Fade In)
             setTimeout(() => {
-                const mainContent = document.getElementById('main-content');
+                splashText.classList.remove('opacity-0', 'scale-95');
+                splashText.classList.add('opacity-100', 'scale-100');
+            }, 200);
+
+            // Detik 1.7: Teks Welcome mulai menghilang perlahan
+            setTimeout(() => {
+                splashText.classList.remove('opacity-100', 'scale-100');
+                splashText.classList.add('opacity-0', 'scale-105');
+            }, 1700);
+
+            // Detik 2.4: Tirai Hitam Splash Screen meluncur naik ke atas (-translate-y-full)
+            setTimeout(() => {
+                splash.classList.add('-translate-y-full');
+                // Mengembalikan fungsi scroll mouse setelah intro selesai
+                document.body.classList.remove('overflow-hidden');
+            }, 2400);
+
+            // Detik 2.8: Landing Page utama muncul anggun (Fade-In & Slide-Up)
+            setTimeout(() => {
                 mainContent.classList.remove('opacity-0', 'blur-md', 'translate-y-4');
                 mainContent.classList.add('opacity-100', 'blur-none', 'translate-y-0');
-            }, 100);
+            }, 2800);
+
+            // Detik 3.8: Singkirkan elemen splash screen dari memori agar tidak mengganggu layout
+            setTimeout(() => {
+                splash.style.display = 'none';
+            }, 3800);
         });
 
-        // --- SISA LOGIKA POPUP & LOGIKA KALKULATOR ---
+        // --- SISTEM KONTROL KALKULATOR ---
         function openKalkulator() {
             const modal = document.getElementById('kalkulator-modal');
             const modalContent = modal.querySelector('div');
