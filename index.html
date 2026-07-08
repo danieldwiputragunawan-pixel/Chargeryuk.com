@@ -9,38 +9,32 @@
 </head>
 <body class="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-slate-950 relative min-h-screen overflow-hidden">
 
-    <!-- A. HALAMAN POLOS SPLASH SCREEN (INTRO LOADER) -->
+    <!-- INTRO SPLASH SCREEN -->
     <div id="splash-screen" class="fixed inset-0 bg-slate-950 z-100 flex flex-col items-center justify-center transition-all duration-1000 ease-in-out">
         <div id="splash-text" class="opacity-0 scale-95 transition-all duration-1000 ease-out text-center">
             <span class="text-4xl md:text-5xl block mb-2">⚡</span>
-            <h2 class="text-2xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 bg-clip-text text-transparent">
+            <h2 id="cms-welcome-text" class="text-2xl md:text-4xl font-black tracking-tight bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 bg-clip-text text-transparent">
                 Welcome to ChargerCukup.com
             </h2>
             <div class="w-12 h-[2px] bg-cyan-500/50 mx-auto mt-4 rounded-full"></div>
         </div>
     </div>
 
-
-    <!-- B. CONTAINER UTAMA LANDING PAGE -->
-    <!-- Keadaan Awal: Buram, Transparan, Geser ke Bawah sedikit (translate-y-4) -->
+    <!-- CONTAINER UTAMA LANDING PAGE -->
     <div id="main-content" class="opacity-0 blur-md translate-y-4 transition-all duration-1000 ease-out">
-
         <!-- 1. HERO SECTION -->
         <header class="max-w-4xl mx-auto text-center px-4 py-20 md:py-32 relative overflow-hidden">
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl -z-10"></div>
-            
             <div class="inline-flex items-center space-x-2 bg-slate-900/60 border border-slate-800 px-5 py-2.5 rounded-2xl shadow-lg shadow-cyan-500/5 mb-6">
                 <span class="text-2xl">⚡</span>
                 <span id="cms-brand-name" class="font-black text-xl tracking-tight bg-gradient-to-r from-cyan-400 via-teal-400 to-amber-400 bg-clip-text text-transparent">ChargerCukup.com</span>
             </div>
-
             <h1 id="cms-hero-title" class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-white">
                 Beli Kepala Charger Baru Tanpa Takut <span class="bg-gradient-to-r from-cyan-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">Salah Watt</span> atau Merusak Baterai
             </h1>
             <p id="cms-hero-desc" class="text-base md:text-lg text-slate-400 mt-6 max-w-2xl mx-auto leading-relaxed">
                 Bingung HP atau Laptop barumu dijual tanpa adaptor di dalam kotaknya? Jangan asal beli adaptor murah. Cek kecocokan daya perangkatmu secara aman, instan, dan 100% akurat.
             </p>
-            
             <div class="mt-10">
                 <button onclick="openKalkulator()" id="cms-cta-btn-1" class="bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-slate-950 font-black px-8 py-4 rounded-xl text-lg shadow-xl shadow-amber-500/20 transition-all duration-200 transform hover:-translate-y-1 inline-block cursor-pointer">
                     ⚡ Buka Kalkulator Charger (Gratis)
@@ -48,7 +42,7 @@
             </div>
         </header>
 
-        <!-- 2. TRUST LOGOS ANATOMY -->
+        <!-- 2. TRUST LOGOS -->
         <section class="border-y border-slate-900 bg-slate-950/40 py-8">
             <div class="max-w-5xl mx-auto px-4 text-center">
                 <p class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-4">Telah Direkomendasikan Oleh Komunitas Teknologi</p>
@@ -61,25 +55,13 @@
             </div>
         </section>
 
-        <!-- 3. STATISTIK DATA SAAS ANATOMY -->
+        <!-- 3. STATISTIK DATA -->
         <section class="max-w-5xl mx-auto px-4 py-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-slate-900/30 border border-slate-900 rounded-2xl p-6 text-center">
-                <div>
-                    <p class="text-2xl md:text-3xl font-black text-cyan-400">99.8%</p>
-                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Tingkat Akurasi</p>
-                </div>
-                <div>
-                    <p class="text-2xl md:text-3xl font-black text-amber-400">45.000+</p>
-                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Gadget Selamat</p>
-                </div>
-                <div>
-                    <p class="text-2xl md:text-3xl font-black text-teal-400">&lt; 1 Detik</p>
-                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Waktu Deteksi</p>
-                </div>
-                <div>
-                    <p class="text-2xl md:text-3xl font-black text-rose-400">0 Kebocoran</p>
-                    <p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Klaim Eror</p>
-                </div>
+                <div><p class="text-2xl md:text-3xl font-black text-cyan-400">99.8%</p><p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Tingkat Akurasi</p></div>
+                <div><p class="text-2xl md:text-3xl font-black text-amber-400">45.000+</p><p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Gadget Selamat</p></div>
+                <div><p class="text-2xl md:text-3xl font-black text-teal-400">&lt; 1 Detik</p><p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Waktu Deteksi</p></div>
+                <div><p class="text-2xl md:text-3xl font-black text-rose-400">0 Kebocoran</p><p class="text-[10px] text-slate-500 mt-1 uppercase font-semibold tracking-wider">Klaim Eror</p></div>
             </div>
         </section>
 
@@ -107,18 +89,16 @@
             </div>
         </section>
 
-        <!-- 5. VALUE PROPOSITION (FITUR UNGGULAN) -->
+        <!-- 5. VALUE PROPOSITION -->
         <section class="py-20 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 border-y border-slate-900 text-center px-4">
             <div class="max-w-3xl mx-auto">
                 <span class="bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-sm shadow-cyan-500/5 mb-4 inline-block">Fitur Unggulan</span>
                 <h2 id="cms-feat-title" class="text-3xl md:text-4xl font-black tracking-tight text-white mt-2">Smart Checker Berbasis Logika Parameter Industri</h2>
-                <p id="cms-feat-desc" class="text-slate-400 mt-4 text-sm md:text-base leading-relaxed">
-                    ChargerCukup.com menerjemahkan angka kelistrikan rumit menjadi rekomendasi finansial dan keamanan yang sangat mudah dipahami orang awam tanpa perlu mengerti ilmu teknik elektro.
-                </p>
+                <p id="cms-feat-desc" class="text-slate-400 mt-4 text-sm md:text-base leading-relaxed">ChargerCukup.com menerjemahkan angka kelistrikan rumit menjadi rekomendasi finansial dan keamanan yang sangat mudah dipahami.</p>
             </div>
         </section>
 
-        <!-- 6. DETAILED FEATURE CARDS -->
+        <!-- 6. DETAIL CARDS -->
         <section class="max-w-5xl mx-auto px-4 py-20">
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-slate-900/20 p-6 rounded-2xl border border-slate-900 text-center">
@@ -139,82 +119,56 @@
             </div>
         </section>
 
-        <!-- FINAL FOOTER -->
         <footer class="bg-slate-950 text-slate-600 text-center py-16 border-t border-slate-900 px-4">
             <p class="text-xs tracking-wide">&copy; 2026 ChargerCukup.com. Seluruh hak cipta dilindungi.</p>
         </footer>
+    </div>
 
-    </div> <!-- END OF MAIN CONTAINER -->
-
-
-    <!-- MODAL POPUP KALKULATOR -->
+    <!-- MODAL KALKULATOR -->
     <div id="kalkulator-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 md:p-10 relative transform scale-95 transition-all duration-300 max-h-[90vh] overflow-y-auto">
-            <button onclick="closeKalkulator()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-950 border border-slate-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition cursor-pointer">&times;</button>
-            
+            <button onclick="closeKalkulator()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-950 border border-slate-800 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold cursor-pointer">&times;</button>
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-black text-white">📱 Kalkulator Deteksi Charger Pintar</h2>
-                <p class="text-xs text-slate-400 mt-2">Simulasikan kecocokan adaptor komersial sebelum Anda bayar di kasir toko</p>
             </div>
-
             <div class="space-y-6">
                 <div>
-                    <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 1: Pilih Jenis Perangkat Anda</label>
+                    <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 1: Pilih Jenis Perangkat</label>
                     <div class="grid grid-cols-2 gap-3">
-                        <button onclick="setPerangkat('iphone')" id="btn-iphone" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">🍏</span> <span>iPhone</span>
-                        </button>
-                        <button onclick="setPerangkat('android')" id="btn-android" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">🤖</span> <span>HP Android</span>
-                        </button>
-                        <button onclick="setPerangkat('laptop_kerja')" id="btn-laptop_kerja" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">💼</span> <span>Laptop Kerja</span>
-                        </button>
-                        <button onclick="setPerangkat('laptop_gaming')" id="btn-laptop_gaming" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2">
-                            <span class="text-xl">🎮</span> <span>Laptop Gaming</span>
-                        </button>
+                        <button onclick="setPerangkat('iphone')" id="btn-iphone" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-slate-400 hover:border-cyan-500 hover:text-white transition flex flex-col items-center space-y-2 cursor-pointer"><span>🍏</span> <span>iPhone</span></button>
+                        <button onclick="setPerangkat('android')" id="btn-android" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-slate-400 hover:border-cyan-500 hover:text-white transition flex flex-col items-center space-y-2 cursor-pointer"><span>🤖</span> <span>Android</span></button>
+                        <button onclick="setPerangkat('laptop_kerja')" id="btn-laptop_kerja" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-slate-400 hover:border-cyan-500 hover:text-white transition flex flex-col items-center space-y-2 cursor-pointer"><span>💼</span> <span>Laptop Kerja</span></button>
+                        <button onclick="setPerangkat('laptop_gaming')" id="btn-laptop_gaming" class="device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-slate-400 hover:border-cyan-500 hover:text-white transition flex flex-col items-center space-y-2 cursor-pointer"><span>🎮</span> <span>Laptop Gaming</span></button>
                     </div>
                 </div>
-
                 <div>
-                    <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 2: Berapa Watt Adaptor yang Ingin Dibeli?</label>
-                    <select id="watt-select" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-2xl p-4 text-sm focus:outline-none focus:border-cyan-400 cursor-pointer">
+                    <label class="block text-sm font-bold text-slate-300 mb-3">Langkah 2: Pilih Watt Adaptor</label>
+                    <select id="watt-select" class="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-2xl p-4 text-sm focus:border-cyan-400 cursor-pointer">
                         <option value="">-- Pilih Output Watt Charger --</option>
-                        <option value="5">5 Watt</option>
-                        <option value="20">20 Watt</option>
-                        <option value="33">33 Watt</option>
-                        <option value="65">65 Watt</option>
-                        <option value="100">100 Watt</option>
+                        <option value="5">5 Watt</option><option value="20">20 Watt</option><option value="33">33 Watt</option><option value="65">65 Watt</option><option value="100">100 Watt</option>
                     </select>
                 </div>
-
-                <button onclick="hitungKecocokan()" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-slate-950 font-black py-4 rounded-2xl transition cursor-pointer text-base">
-                    Hitung Kecocokan Daya ⚡
-                </button>
+                <button onclick="hitungKecocokan()" class="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-black py-4 rounded-2xl cursor-pointer">Hitung Kecocokan Daya ⚡</button>
             </div>
-
             <div id="hasil-box" class="hidden mt-8 border p-6 rounded-2xl transition-all duration-500 transform scale-95 opacity-0">
                 <div class="flex items-start space-x-4">
                     <div id="hasil-icon-bg" class="p-3 rounded-xl text-3xl shrink-0"></div>
-                    <div>
-                        <h4 id="hasil-status" class="font-black text-xl tracking-tight"></h4>
-                        <p id="hasil-deskripsi" class="text-sm text-slate-300 mt-2 leading-relaxed"></p>
-                    </div>
+                    <div><h4 id="hasil-status" class="font-black text-xl"></h4><p id="hasil-deskripsi" class="text-sm text-slate-300 mt-2"></p></div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- TIMELINE SCRIPT UTAMA -->
+    <!-- SCRIPTS -->
     <script>
         let perangkatTerpilih = '';
 
         window.addEventListener('DOMContentLoaded', () => {
-            // 1. SISTEM SYNC DATA DARI CMS (LOCALSTORAGE)
+            // SYNC DATA CMS + KODE WELCOME TEXT BARU
             const savedData = localStorage.getItem('chargerCukup_cms_data');
             if (savedData) {
                 const data = JSON.parse(savedData);
+                if(data.welcomeText) document.getElementById('cms-welcome-text').innerText = data.welcomeText; // <- Baris Sinkronisasi Welcome Text
                 if(data.brandName) document.getElementById('cms-brand-name').innerText = data.brandName;
                 if(data.heroTitle) document.getElementById('cms-hero-title').innerHTML = data.heroTitle;
                 if(data.heroDesc) document.getElementById('cms-hero-desc').innerText = data.heroDesc;
@@ -236,98 +190,24 @@
                 if(data.f3Desc) document.getElementById('cms-f3-desc').innerText = data.f3Desc;
             }
 
-            // 2. TIMELINE ANIMASI INTRO SPLASH SCREEN
+            // TIMELINE ANIMASI SPLASH SCREEN
             const splash = document.getElementById('splash-screen');
             const splashText = document.getElementById('splash-text');
             const mainContent = document.getElementById('main-content');
 
-            // Detik 0.2: Teks Welcome muncul memudar naik (Fade In)
-            setTimeout(() => {
-                splashText.classList.remove('opacity-0', 'scale-95');
-                splashText.classList.add('opacity-100', 'scale-100');
-            }, 200);
-
-            // Detik 1.7: Teks Welcome mulai menghilang perlahan
-            setTimeout(() => {
-                splashText.classList.remove('opacity-100', 'scale-100');
-                splashText.classList.add('opacity-0', 'scale-105');
-            }, 1700);
-
-            // Detik 2.4: Tirai Hitam Splash Screen meluncur naik ke atas (-translate-y-full)
-            setTimeout(() => {
-                splash.classList.add('-translate-y-full');
-                // Mengembalikan fungsi scroll mouse setelah intro selesai
-                document.body.classList.remove('overflow-hidden');
-            }, 2400);
-
-            // Detik 2.8: Landing Page utama muncul anggun (Fade-In & Slide-Up)
-            setTimeout(() => {
-                mainContent.classList.remove('opacity-0', 'blur-md', 'translate-y-4');
-                mainContent.classList.add('opacity-100', 'blur-none', 'translate-y-0');
-            }, 2800);
-
-            // Detik 3.8: Singkirkan elemen splash screen dari memori agar tidak mengganggu layout
-            setTimeout(() => {
-                splash.style.display = 'none';
-            }, 3800);
+            setTimeout(() => { splashText.classList.remove('opacity-0', 'scale-95'); splashText.classList.add('opacity-100', 'scale-100'); }, 200);
+            setTimeout(() => { splashText.classList.remove('opacity-100', 'scale-100'); splashText.classList.add('opacity-0', 'scale-105'); }, 1700);
+            setTimeout(() => { splash.classList.add('-translate-y-full'); document.body.classList.remove('overflow-hidden'); }, 2400);
+            setTimeout(() => { mainContent.classList.remove('opacity-0', 'blur-md', 'translate-y-4'); mainContent.classList.add('opacity-100', 'blur-none', 'translate-y-0'); }, 2800);
+            setTimeout(() => { splash.style.display = 'none'; }, 3800);
         });
 
-        // --- SISTEM KONTROL KALKULATOR ---
-        function openKalkulator() {
-            const modal = document.getElementById('kalkulator-modal');
-            const modalContent = modal.querySelector('div');
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modal.classList.add('opacity-100');
-            modalContent.classList.remove('scale-95');
-            modalContent.classList.add('scale-100');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeKalkulator() {
-            const modal = document.getElementById('kalkulator-modal');
-            const modalContent = modal.querySelector('div');
-            modal.classList.remove('opacity-100');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            document.body.style.overflow = '';
-        }
-
-        function setPerangkat(device) {
-            perangkatTerpilih = device;
-            document.querySelectorAll('.device-btn').forEach(btn => {
-                btn.className = "device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition cursor-pointer flex flex-col items-center space-y-2";
-            });
-            const activeBtn = document.getElementById('btn-' + device);
-            activeBtn.className = "device-btn border border-cyan-500 bg-cyan-500/5 text-white scale-[1.02] rounded-2xl p-4 text-center font-bold text-sm transition cursor-pointer flex flex-col items-center space-y-2";
-        }
-
-        function hitungKecocokan() {
-            const wattSelect = document.getElementById('watt-select').value;
-            if (!perangkatTerpilih || !wattSelect) {
-                alert('Silakan pilih tipe perangkat dan kapasitas watt terlebih dahulu!');
-                return;
-            }
-            const watt = parseInt(wattSelect);
-            if (perangkatTerpilih === 'iphone' || perangkatTerpilih === 'android') {
-                if (watt >= 20 && watt <= 33) tampilkanHasil('hijau', '🟢 COCOK!', `Adaptor ${watt}W pas untuk HP Anda.`, '✅');
-                else tampilkanHasil('red', '❌ TIDAK IDEAL', `Kurang optimal untuk rentang daya HP Anda.`, '❌');
-            } else {
-                if (watt >= 65) tampilkanHasil('hijau', '🟢 AMAN UNTUK LAPTOP', `Daya ${watt}W mencukupi kebutuhan laptop kerja.`, '✅');
-                else tampilkanHasil('red', '❌ DAYA LEMAH', `Laptop tidak akan terisi dengan baik.`, '❌');
-            }
-        }
-
-        function tampilkanHasil(warna, status, deskripsi, icon) {
-            const hasilBox = document.getElementById('hasil-box');
-            const hasilIconBg = document.getElementById('hasil-icon-bg');
-            document.getElementById('hasil-status').innerText = status;
-            document.getElementById('hasil-deskripsi').innerText = deskripsi;
-            hasilIconBg.innerText = icon;
-            if (warna === 'hijau') hasilBox.className = "mt-8 border p-6 rounded-2xl bg-emerald-950/40 border-emerald-500/30 text-emerald-400";
-            else hasilBox.className = "mt-8 border p-6 rounded-2xl bg-rose-950/40 border-rose-500/30 text-rose-400";
-            hasilBox.classList.remove('hidden');
-        }
+        // KALKULATOR ENGINE
+        function openKalkulator() { const m = document.getElementById('kalkulator-modal'); m.classList.remove('opacity-0', 'pointer-events-none'); m.classList.add('opacity-100'); m.querySelector('div').classList.remove('scale-95'); m.querySelector('div').classList.add('scale-100'); document.body.style.overflow = 'hidden'; }
+        function closeKalkulator() { const m = document.getElementById('kalkulator-modal'); m.classList.add('opacity-0', 'pointer-events-none'); m.classList.remove('opacity-100'); m.querySelector('div').classList.add('scale-95'); m.querySelector('div').classList.remove('scale-100'); document.body.style.overflow = ''; }
+        function setPerangkat(d) { perangkatTerpilih = d; document.querySelectorAll('.device-btn').forEach(b => b.className = "device-btn border border-slate-800 bg-slate-950 rounded-2xl p-4 text-center font-bold text-sm text-slate-400 hover:border-cyan-500 hover:text-white transition flex flex-col items-center space-y-2 cursor-pointer"); document.getElementById('btn-' + d).className = "device-btn border border-cyan-500 bg-cyan-500/5 text-white scale-[1.02] rounded-2xl p-4 text-center font-bold text-sm transition flex flex-col items-center space-y-2 cursor-pointer"; }
+        function hitungKecocokan() { const w = parseInt(document.getElementById('watt-select').value); if (!perangkatTerpilih || !w) { alert('Pilih tipe perangkat dan watt!'); return; } if (perangkatTerpilih === 'iphone' || perangkatTerpilih === 'android') { if (w >= 20 && w <= 33) tampilkanHasil('hijau', '🟢 COCOK!', `Adaptor ${w}W pas untuk HP Anda.`, '✅'); else tampilkanHasil('red', '❌ TIDAK IDEAL', `Kurang optimal untuk HP Anda.`, '❌'); } else { if (w >= 65) tampilkanHasil('hijau', '🟢 AMAN UNTUK LAPTOP', `Daya ${w}W mencukupi laptop kerja.`, '✅'); else tampilkanHasil('red', '❌ DAYA LEMAH', `Laptop tidak akan terisi baik.`, '❌'); } }
+        function tampilkanHasil(c, s, d, i) { const b = document.getElementById('hasil-box'); document.getElementById('hasil-status').innerText = s; document.getElementById('hasil-deskripsi').innerText = d; document.getElementById('hasil-icon-bg').innerText = i; b.className = c === 'hijau' ? "mt-8 border p-6 rounded-2xl bg-emerald-950/40 border-emerald-500/30 text-emerald-400" : "mt-8 border p-6 rounded-2xl bg-rose-950/40 border-rose-500/30 text-rose-400"; b.classList.remove('hidden'); }
     </script>
 </body>
 </html>
