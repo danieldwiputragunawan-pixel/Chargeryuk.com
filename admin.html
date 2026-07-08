@@ -4,25 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin CMS Kompleks - ChargerCukup</title>
-    <!-- Tailwind CSS CDN v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen py-12 px-4">
 
     <div class="max-w-4xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl">
         
-        <!-- HEADER -->
         <div class="border-b border-slate-800 pb-6 mb-8 flex items-center justify-between">
             <div>
                 <h1 class="text-2xl md:text-3xl font-black text-white flex items-center gap-2">🛠️ CMS Dashboard Pro</h1>
-                <p class="text-xs text-slate-400 mt-1">Ubah seluruh konten katalog, harga langganan, bundling, dan review secara real-time</p>
+                <p class="text-xs text-slate-400 mt-1">Ubah seluruh konten katalog, URL Gambar, paket, bundling, dan review secara real-time</p>
             </div>
             <a href="index.html" target="_blank" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 text-cyan-400 font-bold px-4 py-2 rounded-xl text-xs transition cursor-pointer">Lihat Web ↗️</a>
         </div>
 
         <form id="cms-form" onsubmit="simpanPerubahan(event)" class="space-y-8">
             
-            <!-- SECTION 0: INTRO TEXT -->
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
                 <h3 class="text-amber-400 font-black text-sm uppercase tracking-wider">✨ Splash Screen Intro</h3>
                 <div>
@@ -31,7 +28,6 @@
                 </div>
             </div>
 
-            <!-- SECTION 1: HERO -->
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
                 <h3 class="text-cyan-400 font-black text-sm uppercase tracking-wider">🚀 Hero & Header</h3>
                 <div class="grid md:grid-cols-3 gap-4">
@@ -49,7 +45,7 @@
                     </div>
                 </div>
                 <div>
-                    <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Hero (Bisa Tag HTML)</label>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Hero</label>
                     <textarea id="input-heroTitle" rows="2" class="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-xl p-3 text-sm"></textarea>
                 </div>
                 <div>
@@ -58,21 +54,28 @@
                 </div>
             </div>
 
-            <!-- [BARU] SECTION: KATALOG CHARGER -->
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-6">
-                <h3 class="text-emerald-400 font-black text-sm uppercase tracking-wider">🔌 Katalog Kepala Charger (Gambar, Fitur, Harga)</h3>
+                <h3 class="text-emerald-400 font-black text-sm uppercase tracking-wider">🔌 Katalog Kepala Charger (Kontrol Penuh Teks & Gambar)</h3>
                 <div>
                     <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Besar Section Produk</label>
                     <input type="text" id="input-prodTitle" class="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-xl p-3 text-sm">
                 </div>
                 
-                <!-- Charger 1 -->
                 <div class="p-4 border border-slate-800 rounded-xl bg-slate-900/60 space-y-3">
                     <span class="text-xs font-black text-slate-400 block">📦 Produk Adaptor #1</span>
-                    <div class="grid md:grid-cols-3 gap-3">
-                        <input type="text" id="input-p1Title" placeholder="Nama Produk" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
-                        <input type="text" id="input-p1Price" placeholder="Harga (Contoh: Rp 149.000)" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
-                        <input type="text" id="input-p1Img" placeholder="URL Link Gambar" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[9px] text-slate-400 font-bold uppercase mb-1">Nama Produk</label>
+                            <input type="text" id="input-p1Title" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[9px] text-slate-400 font-bold uppercase mb-1">Harga Unit</label>
+                            <input type="text" id="input-p1Price" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] text-amber-400 font-bold uppercase mb-1">URL Link Gambar Adaptor (Ubah Di Sini)</label>
+                        <input type="text" id="input-p1Img" class="w-full bg-slate-950 border border-amber-500/40 rounded-xl p-2.5 text-xs text-white focus:border-amber-400">
                     </div>
                     <input type="text" id="input-p1Desc" placeholder="Deskripsi Singkat" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                     <div class="grid md:grid-cols-2 gap-3">
@@ -81,13 +84,21 @@
                     </div>
                 </div>
 
-                <!-- Charger 2 -->
                 <div class="p-4 border border-slate-800 rounded-xl bg-slate-900/60 space-y-3">
                     <span class="text-xs font-black text-slate-400 block">📦 Produk Adaptor #2</span>
-                    <div class="grid md:grid-cols-3 gap-3">
-                        <input type="text" id="input-p2Title" placeholder="Nama Produk" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
-                        <input type="text" id="input-p2Price" placeholder="Harga" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
-                        <input type="text" id="input-p2Img" placeholder="URL Link Gambar" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[9px] text-slate-400 font-bold uppercase mb-1">Nama Produk</label>
+                            <input type="text" id="input-p2Title" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[9px] text-slate-400 font-bold uppercase mb-1">Harga Unit</label>
+                            <input type="text" id="input-p2Price" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] text-amber-400 font-bold uppercase mb-1">URL Link Gambar Adaptor (Ubah Di Sini)</label>
+                        <input type="text" id="input-p2Img" class="w-full bg-slate-950 border border-amber-500/40 rounded-xl p-2.5 text-xs text-white focus:border-amber-400">
                     </div>
                     <input type="text" id="input-p2Desc" placeholder="Deskripsi Singkat" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                     <div class="grid md:grid-cols-2 gap-3">
@@ -96,13 +107,21 @@
                     </div>
                 </div>
 
-                <!-- Charger 3 -->
                 <div class="p-4 border border-slate-800 rounded-xl bg-slate-900/60 space-y-3">
                     <span class="text-xs font-black text-slate-400 block">📦 Produk Adaptor #3</span>
-                    <div class="grid md:grid-cols-3 gap-3">
-                        <input type="text" id="input-p3Title" placeholder="Nama Produk" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
-                        <input type="text" id="input-p3Price" placeholder="Harga" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
-                        <input type="text" id="input-p3Img" placeholder="URL Link Gambar" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[9px] text-slate-400 font-bold uppercase mb-1">Nama Produk</label>
+                            <input type="text" id="input-p3Title" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                        </div>
+                        <div>
+                            <label class="block text-[9px] text-slate-400 font-bold uppercase mb-1">Harga Unit</label>
+                            <input type="text" id="input-p3Price" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[9px] text-amber-400 font-bold uppercase mb-1">URL Link Gambar Adaptor (Ubah Di Sini)</label>
+                        <input type="text" id="input-p3Img" class="w-full bg-slate-950 border border-amber-500/40 rounded-xl p-2.5 text-xs text-white focus:border-amber-400">
                     </div>
                     <input type="text" id="input-p3Desc" placeholder="Deskripsi Singkat" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                     <div class="grid md:grid-cols-2 gap-3">
@@ -112,7 +131,6 @@
                 </div>
             </div>
 
-            <!-- [BARU] SECTION: LANGGANAN & BUNDLING -->
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
                 <h3 class="text-amber-500 font-black text-sm uppercase tracking-wider">💰 Paket Sistem Berlangganan & Bundling</h3>
                 <div>
@@ -120,24 +138,21 @@
                     <input type="text" id="input-subsTitle" class="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-xl p-3 text-sm">
                 </div>
                 <div class="grid md:grid-cols-2 gap-4">
-                    <!-- Berlangganan -->
                     <div class="p-4 border border-slate-800 rounded-xl space-y-2">
                         <span class="text-xs font-bold text-cyan-400 block">💳 Paket Berlangganan (Bulanan)</span>
-                        <input type="text" id="input-sub1Name" placeholder="Nama Paket" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <input type="text" id="input-sub1Price" placeholder="Harga" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <textarea id="input-sub1Desc" rows="2" placeholder="Keterangan Paket" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
+                        <input type="text" id="input-sub1Name" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <input type="text" id="input-sub1Price" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <textarea id="input-sub1Desc" rows="2" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
                     </div>
-                    <!-- Bundling -->
                     <div class="p-4 border border-slate-800 rounded-xl space-y-2">
                         <span class="text-xs font-bold text-amber-400 block">📦 Paket Bundling Fisik</span>
-                        <input type="text" id="input-sub2Name" placeholder="Nama Paket" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <input type="text" id="input-sub2Price" placeholder="Harga" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <textarea id="input-sub2Desc" rows="2" placeholder="Keterangan Paket" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
+                        <input type="text" id="input-sub2Name" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <input type="text" id="input-sub2Price" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <textarea id="input-sub2Desc" rows="2" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
                     </div>
                 </div>
             </div>
 
-            <!-- [BARU] SECTION: REVIEWS -->
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
                 <h3 class="text-fuchsia-400 font-black text-sm uppercase tracking-wider">💬 Review & Testimoni Pengguna</h3>
                 <div>
@@ -147,20 +162,19 @@
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="p-4 border border-slate-800 rounded-xl space-y-2">
                         <span class="text-xs font-bold text-slate-400 block">Reviewer 1</span>
-                        <input type="text" id="input-r1Name" placeholder="Nama" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <input type="text" id="input-r1Role" placeholder="Profesi/Status" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <textarea id="input-r1Text" rows="2" placeholder="Isi Review" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
+                        <input type="text" id="input-r1Name" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <input type="text" id="input-r1Role" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <textarea id="input-r1Text" rows="2" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
                     </div>
                     <div class="p-4 border border-slate-800 rounded-xl space-y-2">
                         <span class="text-xs font-bold text-slate-400 block">Reviewer 2</span>
-                        <input type="text" id="input-r2Name" placeholder="Nama" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <input type="text" id="input-r2Role" placeholder="Profesi/Status" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <textarea id="input-r2Text" rows="2" placeholder="Isi Review" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
+                        <input type="text" id="input-r2Name" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <input type="text" id="input-r2Role" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
+                        <textarea id="input-r2Text" rows="2" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
                     </div>
                 </div>
             </div>
 
-            <!-- SISANYA DIPERTAHANKAN (PAIN POINTS & FEATURES) -->
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
                 <h3 class="text-slate-400 font-black text-sm uppercase tracking-wider">⚠️ Section Masalah (Pain Points) & Fitur</h3>
                 <input type="text" id="input-painTitle" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-xl p-2.5 text-white">
@@ -175,12 +189,10 @@
         </form>
     </div>
 
-    <!-- SCRIPT CMS DATABASE ADMIN -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const savedData = localStorage.getItem('chargerCukup_cms_data');
             
-            // Set Nilai Default jika LocalStorage kosong
             const defaultData = {
                 welcomeText: "Welcome to ChargerCukup.com",
                 brandName: "ChargerCukup.com",
@@ -212,7 +224,6 @@
 
             const data = savedData ? JSON.parse(savedData) : defaultData;
 
-            // Mapping Object ke Form Inputs
             for (const key in defaultData) {
                 const el = document.getElementById('input-' + key);
                 if (el) el.value = data[key] !== undefined ? data[key] : defaultData[key];
@@ -230,7 +241,7 @@
             });
 
             localStorage.setItem('chargerCukup_cms_data', JSON.stringify(cmsData));
-            alert('🎉 Sukses! Seluruh data produk, harga langganan, bundling baru, dan review sukses disinkronisasikan ke landing page.');
+            alert('🎉 Sukses! Seluruh data teks dan URL GAMBAR baru berhasil disinkronisasikan ke landing page.');
         }
     </script>
 </body>
