@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin CMS Kompleks - ChargerCukup</title>
+    <title>Dashboard Admin CMS Pro - ChargerCukup</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .drop-zone--over { border-color: #22d3ee !important; background-color: rgba(34, 211, 238, 0.05); }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen py-12 px-4">
 
@@ -13,7 +16,7 @@
         <div class="border-b border-slate-800 pb-6 mb-8 flex items-center justify-between">
             <div>
                 <h1 class="text-2xl md:text-3xl font-black text-white flex items-center gap-2">🛠️ CMS Dashboard Pro</h1>
-                <p class="text-xs text-slate-400 mt-1">Ubah seluruh konten katalog, URL Gambar, paket, bundling, dan review secara real-time</p>
+                <p class="text-xs text-slate-400 mt-1">Ganti gambar produk via Drag & Drop File langsung tanpa URL link!</p>
             </div>
             <a href="index.html" target="_blank" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 text-cyan-400 font-bold px-4 py-2 rounded-xl text-xs transition cursor-pointer">Lihat Web ↗️</a>
         </div>
@@ -55,7 +58,7 @@
             </div>
 
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-6">
-                <h3 class="text-emerald-400 font-black text-sm uppercase tracking-wider">🔌 Katalog Kepala Charger (Kontrol Penuh Teks & Gambar)</h3>
+                <h3 class="text-emerald-400 font-black text-sm uppercase tracking-wider">🔌 Katalog Kepala Charger (Upload Gambar dengan Drop File)</h3>
                 <div>
                     <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Besar Section Produk</label>
                     <input type="text" id="input-prodTitle" class="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-xl p-3 text-sm">
@@ -73,10 +76,16 @@
                             <input type="text" id="input-p1Price" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                         </div>
                     </div>
+                    
                     <div>
-                        <label class="block text-[9px] text-amber-400 font-bold uppercase mb-1">URL Link Gambar Adaptor (Ubah Di Sini)</label>
-                        <input type="text" id="input-p1Img" class="w-full bg-slate-950 border border-amber-500/40 rounded-xl p-2.5 text-xs text-white focus:border-amber-400">
+                        <label class="block text-[10px] text-amber-400 font-bold uppercase mb-2">Drop File Gambar Adaptor 1</label>
+                        <div class="drop-zone border-2 border-dashed border-slate-800 hover:border-amber-500/50 bg-slate-950 rounded-2xl p-4 text-center cursor-pointer relative transition-all" data-target="input-p1Img">
+                            <span class="text-xs text-slate-500 block pointer-events-none drop-zone-text">Tarik & Jatuhkan file gambar di sini atau <strong class="text-amber-400">Klik untuk cari</strong></span>
+                            <input type="file" accept="image/*" class="hidden file-input">
+                            <input type="hidden" id="input-p1Img"> <img src="" class="preview-img max-h-20 mx-auto mt-2 hidden rounded border border-slate-800">
+                        </div>
                     </div>
+
                     <input type="text" id="input-p1Desc" placeholder="Deskripsi Singkat" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                     <div class="grid md:grid-cols-2 gap-3">
                         <input type="text" id="input-p1Adv" placeholder="Keunggulan Utama" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
@@ -96,10 +105,17 @@
                             <input type="text" id="input-p2Price" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                         </div>
                     </div>
+                    
                     <div>
-                        <label class="block text-[9px] text-amber-400 font-bold uppercase mb-1">URL Link Gambar Adaptor (Ubah Di Sini)</label>
-                        <input type="text" id="input-p2Img" class="w-full bg-slate-950 border border-amber-500/40 rounded-xl p-2.5 text-xs text-white focus:border-amber-400">
+                        <label class="block text-[10px] text-amber-400 font-bold uppercase mb-2">Drop File Gambar Adaptor 2</label>
+                        <div class="drop-zone border-2 border-dashed border-slate-800 hover:border-amber-500/50 bg-slate-950 rounded-2xl p-4 text-center cursor-pointer relative transition-all" data-target="input-p2Img">
+                            <span class="text-xs text-slate-500 block pointer-events-none drop-zone-text">Tarik & Jatuhkan file gambar di sini atau <strong class="text-amber-400">Klik untuk cari</strong></span>
+                            <input type="file" accept="image/*" class="hidden file-input">
+                            <input type="hidden" id="input-p2Img">
+                            <img src="" class="preview-img max-h-20 mx-auto mt-2 hidden rounded border border-slate-800">
+                        </div>
                     </div>
+
                     <input type="text" id="input-p2Desc" placeholder="Deskripsi Singkat" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                     <div class="grid md:grid-cols-2 gap-3">
                         <input type="text" id="input-p2Adv" placeholder="Keunggulan Utama" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
@@ -119,10 +135,17 @@
                             <input type="text" id="input-p3Price" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                         </div>
                     </div>
+                    
                     <div>
-                        <label class="block text-[9px] text-amber-400 font-bold uppercase mb-1">URL Link Gambar Adaptor (Ubah Di Sini)</label>
-                        <input type="text" id="input-p3Img" class="w-full bg-slate-950 border border-amber-500/40 rounded-xl p-2.5 text-xs text-white focus:border-amber-400">
+                        <label class="block text-[10px] text-amber-400 font-bold uppercase mb-2">Drop File Gambar Adaptor 3</label>
+                        <div class="drop-zone border-2 border-dashed border-slate-800 hover:border-amber-500/50 bg-slate-950 rounded-2xl p-4 text-center cursor-pointer relative transition-all" data-target="input-p3Img">
+                            <span class="text-xs text-slate-500 block pointer-events-none drop-zone-text">Tarik & Jatuhkan file gambar di sini atau <strong class="text-amber-400">Klik untuk cari</strong></span>
+                            <input type="file" accept="image/*" class="hidden file-input">
+                            <input type="hidden" id="input-p3Img">
+                            <img src="" class="preview-img max-h-20 mx-auto mt-2 hidden rounded border border-slate-800">
+                        </div>
                     </div>
+
                     <input type="text" id="input-p3Desc" placeholder="Deskripsi Singkat" class="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
                     <div class="grid md:grid-cols-2 gap-3">
                         <input type="text" id="input-p3Adv" placeholder="Keunggulan Utama" class="bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-white">
@@ -132,14 +155,14 @@
             </div>
 
             <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
-                <h3 class="text-amber-500 font-black text-sm uppercase tracking-wider">💰 Paket Sistem Berlangganan & Bundling</h3>
+                <h3 class="text-amber-500 font-black text-sm uppercase tracking-wider">💰 Paket Layanan & Bundling</h3>
                 <div>
                     <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Section Paket</label>
                     <input type="text" id="input-subsTitle" class="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-xl p-3 text-sm">
                 </div>
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="p-4 border border-slate-800 rounded-xl space-y-2">
-                        <span class="text-xs font-bold text-cyan-400 block">💳 Paket Berlangganan (Bulanan)</span>
+                        <span class="text-xs font-bold text-cyan-400 block">💳 Paket Berlangganan</span>
                         <input type="text" id="input-sub1Name" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
                         <input type="text" id="input-sub1Price" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
                         <textarea id="input-sub1Desc" rows="2" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
@@ -153,38 +176,6 @@
                 </div>
             </div>
 
-            <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
-                <h3 class="text-fuchsia-400 font-black text-sm uppercase tracking-wider">💬 Review & Testimoni Pengguna</h3>
-                <div>
-                    <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Section Review</label>
-                    <input type="text" id="input-revTitle" class="w-full bg-slate-950 border border-slate-800 text-slate-200 rounded-xl p-3 text-sm">
-                </div>
-                <div class="grid md:grid-cols-2 gap-4">
-                    <div class="p-4 border border-slate-800 rounded-xl space-y-2">
-                        <span class="text-xs font-bold text-slate-400 block">Reviewer 1</span>
-                        <input type="text" id="input-r1Name" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <input type="text" id="input-r1Role" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <textarea id="input-r1Text" rows="2" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
-                    </div>
-                    <div class="p-4 border border-slate-800 rounded-xl space-y-2">
-                        <span class="text-xs font-bold text-slate-400 block">Reviewer 2</span>
-                        <input type="text" id="input-r2Name" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <input type="text" id="input-r2Role" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                        <textarea id="input-r2Text" rows="2" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"></textarea>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
-                <h3 class="text-slate-400 font-black text-sm uppercase tracking-wider">⚠️ Section Masalah (Pain Points) & Fitur</h3>
-                <input type="text" id="input-painTitle" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-xl p-2.5 text-white">
-                <div class="grid grid-cols-3 gap-2">
-                    <input type="text" id="input-pain1Title" class="bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"><input type="text" id="input-pain2Title" class="bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white"><input type="text" id="input-pain3Title" class="bg-slate-950 border border-slate-800 text-xs rounded-lg p-2 text-white">
-                </div>
-                <input type="text" id="input-featTitle" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-xl p-2.5 text-white">
-                <textarea id="input-featDesc" class="w-full bg-slate-950 border border-slate-800 text-xs rounded-xl p-2.5 text-white"></textarea>
-            </div>
-
             <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-black py-4 rounded-xl shadow-lg transition text-base cursor-pointer">💾 Simpan Semua Konten Sistem</button>
         </form>
     </div>
@@ -194,41 +185,80 @@
             const savedData = localStorage.getItem('chargerCukup_cms_data');
             
             const defaultData = {
-                welcomeText: "Welcome to ChargerCukup.com",
-                brandName: "ChargerCukup.com",
-                heroTitle: "Beli Kepala Charger Baru Tanpa Takut <span class='bg-gradient-to-r from-cyan-400 via-amber-400 to-orange-500 bg-clip-text text-transparent'>Salah Watt</span> atau Merusak Baterai",
-                heroDesc: "Bingung HP atau Laptop barumu dijual tanpa adaptor di dalam kotaknya?",
-                ctaBtn1: "⚡ Buka Kalkulator Charger (Gratis)",
-                ctaBtn2: "💬 Konsultasi Admin",
-                
+                welcomeText: "Welcome to ChargerCukup.com", brandName: "ChargerCukup.com",
+                heroTitle: "Beli Kepala Charger Baru Tanpa Takut Salah Watt atau Merusak Baterai", heroDesc: "Bingung HP atau Laptop barumu dijual tanpa adaptor?",
+                ctaBtn1: "⚡ Buka Kalkulator Charger (Gratis)", ctaBtn2: "💬 Konsultasi Admin",
                 prodTitle: "Rekomendasi Adaptor Charger Terverifikasi",
-                p1Title: "Nano Fast Charger 20W", p1Price: "Rp 149.000", p1Img: "https://images.unsplash.com/photo-1619441201418-f938fa16de61?w=400", p1Desc: "Adaptor super ringkas dengan teknologi GaN terbaru.", p1Adv: "Ukuran mikro, anti-overheat.", p1Match: "iPhone 12-15 Series.",
-                p2Title: "HyperCharge Pro 65W", p2Price: "Rp 349.000", p2Img: "https://images.unsplash.com/photo-1622445262465-2481c4574875?w=400", p2Desc: "Dual port USB-C dengan pembagian daya dinamis.", p2Adv: "Bisa laptop & HP sekaligus.", p2Match: "MacBook Air, Asus Zenbook.",
-                p3Title: "Ultra Beast GaN 100W", p3Price: "Rp 599.000", p3Img: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400", p3Desc: "Monster daya murni untuk setup profesional.", p3Adv: "Output 100W konstan, 3 Port.", p3Match: "MacBook Pro, Laptop Gaming.",
-
-                subsTitle: "Paket Layanan & Bundling Hemat",
-                sub1Name: "Langganan API Premium", sub1Price: "Rp 29.000", sub1Desc: "Update reguler database limitasi sirkuit daya gadget global.",
-                sub2Name: "Bundling SafeCharge Pro", sub2Price: "Rp 429.000", sub2Desc: "Kepala Charger 65W GaN + Kabel LED + Garansi IC 1 Tahun.",
-
-                revTitle: "Kritik & Review Komunitas",
-                r1Name: "Andra Ramadan", r1Role: "Tech Enthusiast", r1Text: '"Gokil, hampir aja gw beli kepala charger 100W abal-abal..."',
-                r2Name: "Siti Clarissa", r2Role: "Freelance Designer", r2Text: '"Sangat terbantu pas nyari adaptor pengganti MacBook Air..."',
-
-                painTitle: "Mengapa Anda Tidak Boleh Asal Colok Charger?",
-                pain1Title: "Pengisian Super Lemot", pain1Desc: "Membeli Watt kecil bikin lelah menunggu.",
-                pain2Title: "Baterai Cepat Bocor", pain2Desc: "Memicu overheat ekstrem.",
-                pain3Title: "Rugi Bandar", pain3Desc: "Membeli daya kegedean padahal sirkuit HP terbatas.",
-                featTitle: "Smart Checker Berbasis Logika Parameter Industri",
-                featDesc: "Mengubah kelistrikan rumit jadi rekomendasi gampang."
+                p1Title: "Nano Fast Charger 20W", p1Price: "Rp 149.000", p1Img: "", p1Desc: "Adaptor super ringkas teknologi GaN.", p1Adv: "Anti-overheat.", p1Match: "iPhone 12-15.",
+                p2Title: "HyperCharge Pro 65W", p2Price: "Rp 349.000", p2Img: "", p2Desc: "Dual port USB-C dinamis.", p2Adv: "Bisa laptop & HP.", p2Match: "MacBook Air.",
+                p3Title: "Ultra Beast GaN 100W", p3Price: "Rp 599.000", p3Img: "", p3Desc: "Monster daya konstan.", p3Adv: "3 Port PD.", p3Match: "MacBook Pro.",
+                subsTitle: "Paket Layanan & Bundling Hemat", sub1Name: "Langganan API Premium", sub1Price: "Rp 29.000", sub1Desc: "Update database berkala.", sub2Name: "Bundling SafeCharge Pro", sub2Price: "Rp 429.000", sub2Desc: "Charger 65W + Kabel LED.",
+                painTitle: "Mengapa Tidak Boleh Asal Colok?", featTitle: "Smart Checker Industri", featDesc: "Konversi daya rumit ke rekomendasi simpel."
             };
 
             const data = savedData ? JSON.parse(savedData) : defaultData;
 
+            // Load data ke text input & sembunyikan/tampilkan preview gambar lama jika ada
             for (const key in defaultData) {
                 const el = document.getElementById('input-' + key);
-                if (el) el.value = data[key] !== undefined ? data[key] : defaultData[key];
+                if (el) {
+                    el.value = data[key] !== undefined ? data[key] : defaultData[key];
+                    
+                    // Jika data itu adalah ID Input Gambar hidden, buat preview gambarnya muncul
+                    if(key.endsWith('Img') && data[key]) {
+                        const dropZone = el.closest('.drop-zone');
+                        const preview = dropZone.querySelector('.preview-img');
+                        const txt = dropZone.querySelector('.drop-zone-text');
+                        preview.src = data[key];
+                        preview.classList.remove('hidden');
+                        txt.innerText = "File ter-upload! Seret file baru untuk mengganti.";
+                    }
+                }
             }
+
+            // AKTIFKAN ENGINE DRAG AND DROP INTERACTIVE
+            document.querySelectorAll('.drop-zone').forEach(zone => {
+                const inputHidden = document.getElementById(zone.dataset.target);
+                const fileInput = zone.querySelector('.file-input');
+                const previewImg = zone.querySelector('.preview-img');
+                const txt = zone.querySelector('.drop-zone-text');
+
+                // Klik area untuk milih file
+                zone.addEventListener('click', () => fileInput.click());
+
+                fileInput.addEventListener('change', () => {
+                    if(fileInput.files.length) handleFile(fileInput.files[0], inputHidden, previewImg, txt);
+                });
+
+                // Efek Drag over & leave
+                zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('drop-zone--over'); });
+                ['dragleave', 'dragend'].forEach(type => { zone.addEventListener(type, () => zone.classList.remove('drop-zone--over')); });
+
+                // Event ketika file di-drop
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('drop-zone--over');
+                    if(e.dataTransfer.files.length) {
+                        fileInput.files = e.dataTransfer.files;
+                        handleFile(e.dataTransfer.files[0], inputHidden, previewImg, txt);
+                    }
+                });
+            });
         });
+
+        // Merubah file binary gambar menjadi string teks Base64
+        function handleFile(file, hiddenInput, preview, textElement) {
+            if(!file.type.startsWith('image/')) { alert('Harus file gambar ya!'); return; }
+            
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                hiddenInput.value = reader.result; // String Base64 tersimpan di input hidden
+                preview.src = reader.result;
+                preview.classList.remove('hidden');
+                textElement.innerText = "Berhasil memuat gambar! Siap disimpan.";
+            };
+        }
 
         function simpanPerubahan(event) {
             event.preventDefault();
@@ -241,7 +271,7 @@
             });
 
             localStorage.setItem('chargerCukup_cms_data', JSON.stringify(cmsData));
-            alert('🎉 Sukses! Seluruh data teks dan URL GAMBAR baru berhasil disinkronisasikan ke landing page.');
+            alert('🎉 Sukses! File gambar & data teks baru langsung aktif di index.html via local storage sandbox!');
         }
     </script>
 </body>
