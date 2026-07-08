@@ -3,170 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin - CMS ChargerCukup.com</title>
+    <title>Dashboard Admin CMS - ChargerCukup</title>
+    <!-- Tailwind CSS CDN v4 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans p-6 md:p-12">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen py-12 px-4">
 
     <div class="max-w-3xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-10 shadow-2xl">
         
-        <div class="flex justify-between items-center mb-8 border-b border-slate-800 pb-6">
+        <!-- HEADER -->
+        <div class="border-b border-slate-800 pb-6 mb-8 flex items-center justify-between">
             <div>
-                <h1 class="text-2xl font-black text-white flex items-center gap-2">⚙️ CMS Dashboard</h1>
-                <p class="text-xs text-slate-400 mt-1">Ubah konten landing page tanpa menyentuh baris kode</p>
+                <h1 class="text-2xl md:text-3xl font-black text-white flex items-center gap-2">🛠️ CMS Dashboard</h1>
+                <p class="text-xs text-slate-400 mt-1">Ubah konten landing page secara real-time tanpa menyentuh kodingan HTML</p>
             </div>
-            <a href="index.html" class="bg-cyan-600 hover:bg-cyan-700 text-slate-950 text-xs font-bold px-4 py-2 rounded-xl transition">
-                👁️ Lihat Web Utama
-            </a>
+            <a href="index.html" target="_blank" class="bg-slate-950 hover:bg-slate-800 border border-slate-800 text-cyan-400 font-bold px-4 py-2 rounded-xl text-xs transition cursor-pointer">Lihat Web ↗️</a>
         </div>
 
-        <form id="cms-form" class="space-y-6">
-            <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4">
-                <h3 class="text-sm font-black text-cyan-400 uppercase tracking-wider">1. Bagian Atas (Hero Section)</h3>
+        <!-- FORM CMS -->
+        <form id="cms-form" onsubmit="simpanPerubahan(event)" class="space-y-8">
+            
+            <!-- SECTION 0: INTRO LOADER TEXT -->
+            <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
+                <h3 class="text-amber-400 font-black text-sm uppercase tracking-wider flex items-center gap-2">✨ Pengaturan Intro Loader (Splash Screen)</h3>
                 <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-2">Nama Brand / Aplikasi</label>
-                    <input type="text" id="input-brandName" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-cyan-500 text-slate-200">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-2">Judul Utama</label>
-                    <textarea id="input-heroTitle" rows="2" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-cyan-500 text-slate-200"></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-2">Deskripsi Pendek</label>
-                    <textarea id="input-heroDesc" rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-cyan-500 text-slate-200"></textarea>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-2">Teks Tombol Pembuka Kalkulator</label>
-                    <input type="text" id="input-ctaBtn1" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-cyan-500 text-slate-200">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Teks Ucapan Selamat Datang</label>
+                    <input type="text" id="input-welcomeText" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400" placeholder="Contoh: Welcome to ChargerCukup.com">
                 </div>
             </div>
 
-            <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4">
-                <h3 class="text-sm font-black text-amber-400 uppercase tracking-wider">2. Bagian Edukasi Masalah (Pain Points)</h3>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-2">Judul Section Masalah</label>
-                    <input type="text" id="input-painTitle" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-cyan-500 text-slate-200">
+            <!-- SECTION 1: HERO SECTIONS -->
+            <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
+                <h3 class="text-cyan-400 font-black text-sm uppercase tracking-wider">🚀 Hero & Header Section</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Nama Brand/Logo</label>
+                        <input type="text" id="input-brandName" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Teks Tombol CTA</label>
+                        <input type="text" id="input-ctaBtn1" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400">
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-800/60 pt-4">
-                    <div class="space-y-2">
-                        <label class="block text-[11px] font-bold text-slate-500">Kolom 1: Judul</label>
-                        <input type="text" id="input-pain1Title" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
-                        <label class="block text-[11px] font-bold text-slate-500">Kolom 1: Isi</label>
-                        <textarea id="input-pain1Desc" rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200"></textarea>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="block text-[11px] font-bold text-slate-500">Kolom 2: Judul</label>
-                        <input type="text" id="input-pain2Title" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
-                        <label class="block text-[11px] font-bold text-slate-500">Kolom 2: Isi</label>
-                        <textarea id="input-pain2Desc" rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200"></textarea>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="block text-[11px] font-bold text-slate-500">Kolom 3: Judul</label>
-                        <input type="text" id="input-pain3Title" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
-                        <label class="block text-[11px] font-bold text-slate-500">Kolom 3: Isi</label>
-                        <textarea id="input-pain3Desc" rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200"></textarea>
-                    </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Utama (Hero Title)</label>
+                    <textarea id="input-heroTitle" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400"></textarea>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Deskripsi Hero</label>
+                    <textarea id="input-heroDesc" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400"></textarea>
                 </div>
             </div>
 
-            <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 space-y-4">
-                <h3 class="text-sm font-black text-teal-400 uppercase tracking-wider">3. Bagian Fitur Unggulan</h3>
+            <!-- SECTION 2: PAIN POINTS -->
+            <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
+                <h3 class="text-cyan-400 font-black text-sm uppercase tracking-wider">⚠️ Section Masalah (Pain Points)</h3>
                 <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-2">Judul Utama Fitur</label>
-                    <input type="text" id="input-featTitle" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-cyan-500 text-slate-200">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Section Masalah</label>
+                    <input type="text" id="input-painTitle" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400">
                 </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-2">Sub-deskripsi Fitur</label>
-                    <textarea id="input-featDesc" rows="2" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-3 text-sm focus:outline-none focus:border-cyan-500 text-slate-200"></textarea>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-800/60 pt-4">
+                <div class="grid md:grid-cols-3 gap-4 pt-2">
                     <div class="space-y-2">
-                        <label class="block text-[11px] font-bold text-slate-500">Kartu 1: Judul</label>
-                        <input type="text" id="input-f1Title" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
-                        <label class="block text-[11px] font-bold text-slate-500">Kartu 1: Detail</label>
-                        <textarea id="input-f1Desc" rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200"></textarea>
+                        <span class="text-xs font-bold text-amber-400 block">Kartu 1</span>
+                        <input type="text" id="input-pain1Title" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"><textarea id="input-pain1Desc" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"></textarea>
                     </div>
                     <div class="space-y-2">
-                        <label class="block text-[11px] font-bold text-slate-500">Kartu 2: Judul</label>
-                        <input type="text" id="input-f2Title" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
-                        <label class="block text-[11px] font-bold text-slate-500">Kartu 2: Detail</label>
-                        <textarea id="input-f2Desc" rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200"></textarea>
+                        <span class="text-xs font-bold text-rose-400 block">Kartu 2</span>
+                        <input type="text" id="input-pain2Title" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"><textarea id="input-pain2Desc" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"></textarea>
                     </div>
                     <div class="space-y-2">
-                        <label class="block text-[11px] font-bold text-slate-500">Kartu 3: Judul</label>
-                        <input type="text" id="input-f3Title" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200">
-                        <label class="block text-[11px] font-bold text-slate-500">Kartu 3: Detail</label>
-                        <textarea id="input-f3Desc" rows="3" class="w-full bg-slate-900 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-200"></textarea>
+                        <span class="text-xs font-bold text-cyan-400 block">Kartu 3</span>
+                        <input type="text" id="input-pain3Title" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"><textarea id="input-pain3Desc" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"></textarea>
                     </div>
                 </div>
             </div>
 
-            <div class="flex gap-3 pt-4">
-                <button type="button" onclick="simpanPerubahan()" class="flex-1 bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-500 hover:to-teal-600 text-slate-950 font-black py-3.5 rounded-xl transition cursor-pointer text-sm text-center">
-                    💾 Simpan Perubahan Konten
-                </button>
-                <button type="button" onclick="resetDefault()" class="bg-rose-950/40 border border-rose-500/30 hover:bg-rose-900/40 text-rose-400 font-bold px-5 py-3.5 rounded-xl transition cursor-pointer text-sm">
-                    Reset Default
-                </button>
+            <!-- SECTION 3: FEATURES -->
+            <div class="bg-slate-950/50 p-6 rounded-2xl border border-slate-800/60 space-y-4">
+                <h3 class="text-cyan-400 font-black text-sm uppercase tracking-wider">💡 Section Fitur Unggulan</h3>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Judul Besar Fitur</label>
+                    <input type="text" id="input-featTitle" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Deskripsi Sub-Fitur</label>
+                    <textarea id="input-featDesc" rows="2" class="w-full bg-slate-950 border border-slate-800 text-slate-200 font-semibold rounded-xl p-3.5 text-sm focus:outline-none focus:border-cyan-400"></textarea>
+                </div>
+                <div class="grid md:grid-cols-3 gap-4 pt-4 border-t border-slate-800/50">
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 block">Detail Fitur 1</span>
+                        <input type="text" id="input-f1Title" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"><textarea id="input-f1Desc" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 block">Detail Fitur 2</span>
+                        <input type="text" id="input-f2Title" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"><textarea id="input-f2Desc" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"></textarea>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-bold text-slate-400 block">Detail Fitur 3</span>
+                        <input type="text" id="input-f3Title" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"><textarea id="input-f3Desc" rows="3" class="w-full bg-slate-950 border border-slate-800 text-slate-200 text-xs rounded-xl p-3 focus:outline-none focus:border-cyan-400"></textarea>
+                    </div>
+                </div>
             </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-black py-4 rounded-xl shadow-lg transition text-base cursor-pointer">💾 Simpan Semua Perubahan Konten</button>
         </form>
     </div>
 
     <script>
-        // Data default gabungan
-        const defaultData = {
-            brandName: 'ChargerCukup.com',
-            heroTitle: 'Beli Kepala Charger Baru Tanpa Takut <span class="bg-gradient-to-r from-cyan-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">Salah Watt</span> atau Merusak Baterai',
-            heroDesc: 'Bingung HP atau Laptop barumu dijual tanpa adaptor di dalam kotaknya? Jangan asal beli adaptor murah. Cek kecocokan daya perangkatmu secara aman, instan, dan 100% akurat.',
-            ctaBtn1: '⚡ Buka Kalkulator Charger (Gratis)',
-            painTitle: 'Mengapa Anda Tidak Boleh Asal Colok Charger?',
-            pain1Title: 'Pengisian Super Lemot',
-            pain1Desc: 'Membeli Watt yang terlalu kecil membuat baterai tidak akan pernah terisi penuh walaupun dicolok seharian.',
-            pain2Title: 'Baterai Cepat Bocor',
-            pain2Desc: 'Memicu panas berlebih (overheat) yang mempercepat penurunan kesehatan baterai (Battery Health) gadget mahal Anda.',
-            pain3Title: 'Rugi Bandar',
-            pain3Desc: 'Membeli adaptor 100W berharga mahal akan sia-sia jika batas tampung sirkuit bawaan HP Anda ternyata mentok di 25W saja.',
-            // Default Fitur Unggulan
-            featTitle: 'Smart Checker Berbasis Logika Parameter Industri',
-            featDesc: 'ChargerCukup.com menerjemahkan angka kelistrikan rumit menjadi rekomendasi finansial dan keamanan yang sangat mudah dipahami orang awam tanpa perlu mengerti ilmu teknik elektro.',
-            f1Title: 'Smart Matcher Matrix',
-            f1Desc: 'Algoritma otomatis mencocokkan batas toleransi daya input perangkat dengan output adaptor aman.',
-            f2Title: 'Battery Safeguard',
-            f2Desc: 'Peringatan dini sistem jika adaptor yang dipilih berpotensi merusak sirkuit IC Power internal.',
-            f3Title: 'Eco-Billing Optimizer',
-            f3Desc: 'Menghitung efisiensi daya agar pengisian maksimal tanpa membuang sisa arus listrik di rumah.'
-        };
-
         window.addEventListener('DOMContentLoaded', () => {
             const savedData = localStorage.getItem('chargerCukup_cms_data');
-            const currentData = savedData ? JSON.parse(savedData) : defaultData;
+            const defaultData = {
+                welcomeText: "Welcome to ChargerCukup.com",
+                brandName: "ChargerCukup.com",
+                heroTitle: "Beli Kepala Charger Baru Tanpa Takut <span class='bg-gradient-to-r from-cyan-400 via-amber-400 to-orange-500 bg-clip-text text-transparent'>Salah Watt</span> atau Merusak Baterai",
+                heroDesc: "Bingung HP atau Laptop barumu dijual tanpa adaptor di dalam kotaknya? Jangan asal beli adaptor murah.",
+                ctaBtn1: "⚡ Buka Kalkulator Charger (Gratis)",
+                painTitle: "Mengapa Anda Tidak Boleh Asal Colok Charger?",
+                pain1Title: "Pengisian Super Lemot", pain1Desc: "Membeli Watt yang terlalu kecil membuat baterai tidak akan pernah terisi penuh.",
+                pain2Title: "Baterai Cepat Bocor", pain2Desc: "Memicu panas berlebih (overheat) yang mempercepat penurunan kesehatan sirkuit.",
+                pain3Title: "Rugi Bandar", pain3Desc: "Membeli adaptor 100W berharga mahal akan sia-sia jika sirkuit internal HP mentok di 25W.",
+                featTitle: "Smart Checker Berbasis Logika Parameter Industri",
+                featDesc: "Mengubah angka kelistrikan rumit menjadi rekomendasi finansial dan keamanan.",
+                f1Title: "Smart Matcher Matrix", f1Desc: "Mencocokkan batas toleransi daya input perangkat otomatis.",
+                f2Title: "Battery Safeguard", f2Desc: "Peringatan dini sirkuit IC Power internal.",
+                f3Title: "Eco-Billing Optimizer", f3Desc: "Menghitung efisiensi daya agar sisa arus listrik aman."
+            };
 
-            for (let key in currentData) {
-                const el = document.getElementById('input-' + key);
-                if (el) el.value = currentData[key];
-            }
+            const data = savedData ? JSON.parse(savedData) : defaultData;
+            document.getElementById('input-welcomeText').value = data.welcomeText || defaultData.welcomeText;
+            document.getElementById('input-brandName').value = data.brandName || defaultData.brandName;
+            document.getElementById('input-heroTitle').value = data.heroTitle || defaultData.heroTitle;
+            document.getElementById('input-heroDesc').value = data.heroDesc || defaultData.heroDesc;
+            document.getElementById('input-ctaBtn1').value = data.ctaBtn1 || defaultData.ctaBtn1;
+            document.getElementById('input-painTitle').value = data.painTitle || defaultData.painTitle;
+            document.getElementById('input-pain1Title').value = data.pain1Title || defaultData.pain1Title;
+            document.getElementById('input-pain1Desc').value = data.pain1Desc || defaultData.pain1Desc;
+            document.getElementById('input-pain2Title').value = data.pain2Title || defaultData.pain2Title;
+            document.getElementById('input-pain2Desc').value = data.pain2Desc || defaultData.pain2Desc;
+            document.getElementById('input-pain3Title').value = data.pain3Title || defaultData.pain3Title;
+            document.getElementById('input-pain3Desc').value = data.pain3Desc || defaultData.pain3Desc;
+            document.getElementById('input-featTitle').value = data.featTitle || defaultData.featTitle;
+            document.getElementById('input-featDesc').value = data.featDesc || defaultData.featDesc;
+            document.getElementById('input-f1Title').value = data.f1Title || defaultData.f1Title;
+            document.getElementById('input-f1Desc').value = data.f1Desc || defaultData.f1Desc;
+            document.getElementById('input-f2Title').value = data.f2Title || defaultData.f2Title;
+            document.getElementById('input-f2Desc').value = data.f2Desc || defaultData.f2Desc;
+            document.getElementById('input-f3Title').value = data.f3Title || defaultData.f3Title;
+            document.getElementById('input-f3Desc').value = data.f3Desc || defaultData.f3Desc;
         });
 
-        function simpanPerubahan() {
-            const newData = {};
-            for (let key in defaultData) {
-                const el = document.getElementById('input-' + key);
-                if (el) newData[key] = el.value;
-            }
-            localStorage.setItem('chargerCukup_cms_data', JSON.stringify(newData));
-            alert('Konten berhasil diubah! Silakan cek halaman utama.');
-        }
-
-        function resetDefault() {
-            if(confirm('Apakah Anda yakin ingin mengembalikan semua susunan teks seperti semula?')) {
-                localStorage.removeItem('chargerCukup_cms_data');
-                for (let key in defaultData) {
-                    const el = document.getElementById('input-' + key);
-                    if (el) el.value = defaultData[key];
-                }
-                alert('Teks dikembalikan ke default. Jangan lupa klik simpan!');
-            }
+        function simpanPerubahan(event) {
+            event.preventDefault();
+            const cmsData = {
+                welcomeText: document.getElementById('input-welcomeText').value,
+                brandName: document.getElementById('input-brandName').value,
+                heroTitle: document.getElementById('input-heroTitle').value,
+                heroDesc: document.getElementById('input-heroDesc').value,
+                ctaBtn1: document.getElementById('input-ctaBtn1').value,
+                painTitle: document.getElementById('input-painTitle').value,
+                pain1Title: document.getElementById('input-pain1Title').value,
+                pain1Desc: document.getElementById('input-pain1Desc').value,
+                pain2Title: document.getElementById('input-pain2Title').value,
+                pain2Desc: document.getElementById('input-pain2Desc').value,
+                pain3Title: document.getElementById('input-pain3Title').value,
+                pain3Desc: document.getElementById('input-pain3Desc').value,
+                featTitle: document.getElementById('input-featTitle').value,
+                featDesc: document.getElementById('input-featDesc').value,
+                f1Title: document.getElementById('input-f1Title').value,
+                f1Desc: document.getElementById('input-f1Desc').value,
+                f2Title: document.getElementById('input-f2Title').value,
+                f2Desc: document.getElementById('input-f2Desc').value,
+                f3Title: document.getElementById('input-f3Title').value,
+                f3Desc: document.getElementById('input-f3Desc').value
+            };
+            localStorage.setItem('chargerCukup_cms_data', JSON.stringify(cmsData));
+            alert('🎉 Sukses! Konten ter-update.');
         }
     </script>
 </body>
